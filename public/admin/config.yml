@@ -1,18 +1,28 @@
 backend:
   name: git-gateway
   branch: main
+
+local_backend: true
+
 media_folder: "public/images/cms"
 public_folder: "/images/cms"
 collections:
-  - name: "music"
-    label: "Music"
-    folder: "templates/music"
+  - label: "Music"
+    name: "music"
+    folder: "/content/songs"
     create: true
     slug: "{{slug}}"
     fields:
       - { label: "Layout", name: "layout", widget: "hidden", default: "music" }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Artist", name: "artist", widget: "string" }
-      - { label: "Release Date", name: "date", widget: "datetime" }
+      - { label: "Release Date", name: "date", widget: "datetime", format: "MMM D, YYYY", date_format: "MM/D/YYYY", time_format: false }
       - { label: "Artwork", name: "artwork", widget: "image" }
-      - { label: "Description", name: "description", widget: "markdown" }
+      - { label: "Description", name: "body", widget: "markdown" }
+      - label: "Stream Links"
+        name: "links"
+        widget: "object"
+        fields:
+          - { label: "Spotify", name: "spotify", widget: "string" }
+          - { label: "Apple Music", name: "apple", widget: "string" }
+          - { label: "Youtube", name: "youtube", widget: "string" }
