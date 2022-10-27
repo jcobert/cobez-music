@@ -7,8 +7,8 @@ local_backend: true
 media_folder: "public/images/cms"
 public_folder: "/images/cms"
 collections:
-  - name: "music"
-    label: "Music"
+  - label: "Music"
+    name: "music"
     folder: "/content/songs"
     create: true
     slug: "{{slug}}"
@@ -18,7 +18,11 @@ collections:
       - { label: "Artist", name: "artist", widget: "string" }
       - { label: "Release Date", name: "date", widget: "datetime", format: "MMM D, YYYY", date_format: "MM/D/YYYY", time_format: false }
       - { label: "Artwork", name: "artwork", widget: "image" }
-      - { label: "Description", name: "description", widget: "markdown" }
-      - { label: "Spotify", name: "spotify", widget: "string" }
-      - { label: "Apple Music", name: "apple", widget: "string" }
-      - { label: "Youtube", name: "youtube", widget: "string" }
+      - { label: "Description", name: "body", widget: "markdown" }
+      - label: "Stream Links"
+        name: "links"
+        widget: "object"
+        fields:
+          - { label: "Spotify", name: "spotify", widget: "string" }
+          - { label: "Apple Music", name: "apple", widget: "string" }
+          - { label: "Youtube", name: "youtube", widget: "string" }
