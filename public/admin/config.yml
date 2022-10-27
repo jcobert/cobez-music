@@ -16,6 +16,9 @@ collections:
       - { label: "Layout", name: "layout", widget: "hidden", default: "music" }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Artist", name: "artist", widget: "string" }
-      - { label: "Release Date", name: "date", widget: "datetime", format: "MM/DD/YYYY", date_format: "MM/DD/YYYY", time_format: false }
+      - { label: "Release Date", name: "date", widget: "datetime", format: "MMM D, YYYY", date_format: "MM/D/YYYY", time_format: false }
       - { label: "Artwork", name: "artwork", widget: "image" }
       - { label: "Description", name: "description", widget: "markdown" }
+      - { label: "Spotify", name: "spotify", widget: "string" }
+      - { label: "Apple Music", name: "apple", widget: "string" }
+      - { label: "Youtube", name: "youtube", widget: "string" }
