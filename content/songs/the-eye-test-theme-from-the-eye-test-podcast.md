@@ -4,6 +4,7 @@ title: The Eye Test (Theme from The Eye Test Podcast)
 artist: Cobez
 date: Apr 10, 2022
 artwork: /images/cms/theme-song-art.jpg
+featured: true
 links:
   spotify: https://open.spotify.com/track/0gLGKcUMjGQQ8aimmgjtL8?si=c6ed19eddf234a51
   apple: https://music.apple.com/us/album/the-eye-test-theme-from-the-eye-test-podcast/1619215200?i=1619215201

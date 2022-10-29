@@ -10,6 +10,9 @@ module.exports = {
       sans: ['Bellota Text', ...fontFamily.sans],
     },
     extend: {
+      backgroundImage: {
+        'hero': "url('/images/artist-photo-cobez-park.jpg')"
+      },
       colors: {
         "theme-primary": "#515CBB",
         "theme-secondary": "#ADADAD",
