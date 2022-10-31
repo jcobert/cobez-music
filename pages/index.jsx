@@ -2,6 +2,22 @@ import Head from "next/head";
 import Script from "next/script";
 import SongCard from "../components/SongCard";
 
+const featuredSong = {
+  title: "The Eye Test (Theme from The Eye Test Podcast)",
+  artist: "Cobez",
+  date: "Apr 10, 2022",
+  description:
+    "The Eye Test is a sports podcast, hosted by my good friend Brian Donovan. I currently produce the show - editing the episodes and prepping them for release. This song is the extended version of the intro theme music that I created for the show.",
+  links: {
+    spotify:
+      "https://open.spotify.com/track/0gLGKcUMjGQQ8aimmgjtL8?si=c6ed19eddf234a51",
+    apple:
+      "https://music.apple.com/us/album/the-eye-test-theme-from-the-eye-test-podcast/1619215200?i=1619215201",
+    youtube: "https://music.youtube.com/watch?v=R9kKrzz7imk",
+  },
+  artwork: "/images/cms/theme-song-art.jpg",
+};
+
 export default function Home() {
   return (
     <div>
@@ -14,10 +30,19 @@ export default function Home() {
       {/* Main */}
       <div>
         <div className="">
-          <img className="mx-auto w-full max-w-2xl" src="/images/cobez-logo.svg" alt="Cobez logo" />
-          <h4 className="font-bellotaHeading font-bold text-3xl text-center text-white">songwriter | producer</h4>
+          <img
+            className="mx-auto w-full max-w-2xl"
+            src="/images/cobez-logo.svg"
+            alt="Cobez logo"
+          />
+          <h4 className="font-bellotaHeading font-bold text-3xl text-center text-white">
+            songwriter | producer
+          </h4>
         </div>
-        <SongCard />
+        {/* Featured Music */}
+        <div className="mt-20 mx-auto max-w-3xl">
+          <SongCard song={featuredSong} />
+        </div>
       </div>
     </div>
   );
