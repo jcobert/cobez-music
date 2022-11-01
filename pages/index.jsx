@@ -29,18 +29,19 @@ export default function Home() {
       <Script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></Script>
       {/* Main */}
       <div>
+        {/* Heading/Hero */}
         <div className="">
           <img
-            className="mx-auto w-full max-w-2xl"
+            className="mx-auto w-full max-w-xl"
             src="/images/cobez-logo.svg"
             alt="Cobez logo"
           />
-          <h4 className="font-bellotaHeading font-bold text-3xl text-center text-white">
+          <h4 className="font-bellotaHeading font-bold text-3xl text-center text-white mt-2">
             songwriter | producer
           </h4>
         </div>
         {/* Featured Music */}
-        <div className="mt-20 mx-auto max-w-3xl">
+        <div className="my-20 mx-auto max-w-3xl">
           <SongCard song={featuredSong} />
         </div>
       </div>
