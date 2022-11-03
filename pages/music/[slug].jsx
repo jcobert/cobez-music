@@ -17,7 +17,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const { frontmatter, markdown } = getSongData(params.id);
+  const { frontmatter, markdown } = getSongData(params.slug);
   return {
     props: {
       frontmatter,

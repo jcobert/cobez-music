@@ -12,7 +12,9 @@ function SongCard(props) {
     <div className="shadow">
       {/* Header */}
       <div className="h-12 rounded-t-md bg-theme-primary flex items-center justify-center md:justify-start md:pl-4">
-        <h1 className="text-white text-3xl md:text-3xl text-center md:text-left font-bellotaHeading font-bold">Featured Song</h1>
+        <h1 className="text-white text-3xl md:text-3xl text-center md:text-left font-bellotaHeading font-bold">
+          {props.header}
+        </h1>
       </div>
       {/* Content */}
       <div className="border border-t-0 bg-slate-50 py-4 pt-0 rounded-b-md">
@@ -21,38 +23,38 @@ function SongCard(props) {
           <div className="h-56 w-56 flex items-center justify-center">
             <div
               className="bg-contain bg-no-repeat bg-center p-24 md:p-28"
-              style={{ backgroundImage: `url(${song.artwork})` }}
+              style={{ backgroundImage: `url(${song.data.artwork})` }}
             ></div>
           </div>
           {/* Body */}
           <div className="flex flex-col items-center gap-y-4 md:pl-5 mt-3">
             {/* Title */}
             <div className="flex flex-col items-center md:items-start md:self-start text-center">
-              <h4 className="text-lg font-bold">{song.title}</h4>
-              <h5 className="text-slate-800 font-bold">{song.artist}</h5>
+              <h4 className="text-lg font-bold">{song.data.title}</h4>
+              <h5 className="text-slate-800 font-bold">{song.data.artist}</h5>
             </div>
             {/* Description */}
             <div className="">
-              <p>{song.description}</p>
+              <p>{song.data.description}</p>
             </div>
             <div className="flex flex-col md:flex-row w-full justify-center items-center gap-y-4">
               {/* Stream Links */}
               <div className="flex w-9/12 items-center justify-around md:justify-evenly text-5xl md:text-4xl text-theme-tertiary p-2 flex-1">
                 <a
                   className="hover:text-theme-secondary transition"
-                  href={song.links.spotify}
+                  href={song.data.links.spotify}
                 >
                   <FontAwesomeIcon icon={faSpotify} />
                 </a>
                 <a
                   className="hover:text-theme-secondary transition"
-                  href={song.links.apple}
+                  href={song.data.links.apple}
                 >
                   <FontAwesomeIcon icon={faApple} />
                 </a>
                 <a
                   className="hover:text-theme-secondary transition"
-                  href={song.links.youtube}
+                  href={song.data.links.youtube}
                 >
                   <FontAwesomeIcon icon={faYoutube} />
                 </a>

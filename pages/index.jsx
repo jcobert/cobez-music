@@ -1,24 +1,16 @@
 import Head from "next/head";
 import Script from "next/script";
 import SongCard from "../components/SongCard";
+import { getAllSongData } from "../lib/songs";
 
-const featuredSong = {
-  title: "The Eye Test (Theme from The Eye Test Podcast)",
-  artist: "Cobez",
-  date: "Apr 10, 2022",
-  description:
-    "The Eye Test is a sports podcast, hosted by my good friend Brian Donovan. I currently produce the show - editing the episodes and prepping them for release. This song is the extended version of the intro theme music that I created for the show.",
-  links: {
-    spotify:
-      "https://open.spotify.com/track/0gLGKcUMjGQQ8aimmgjtL8?si=c6ed19eddf234a51",
-    apple:
-      "https://music.apple.com/us/album/the-eye-test-theme-from-the-eye-test-podcast/1619215200?i=1619215201",
-    youtube: "https://music.youtube.com/watch?v=R9kKrzz7imk",
-  },
-  artwork: "/images/cms/theme-song-art.jpg",
-};
+export default function Home({ songData }) {
+  const featuredSong = [songData].flatMap((songs) => {
+    const songJson = JSON.parse(songs);
+    return songJson.filter(function (song) {
+      return song.data.featured;
+    });
+  });
 
-export default function Home() {
   return (
     <div>
       <Head>
@@ -42,9 +34,18 @@ export default function Home() {
         </div>
         {/* Featured Music */}
         <div className="my-20 mx-auto max-w-3xl">
-          <SongCard song={featuredSong} />
+          <SongCard song={featuredSong[0]} header="Featured Music" />
         </div>
       </div>
     </div>
   );
+}
+
+export async function getStaticProps() {
+  const songData = getAllSongData();
+  return {
+    props: {
+      songData,
+    },
+  };
 }
