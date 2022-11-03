@@ -4,7 +4,7 @@ import SongCard from "../components/SongCard";
 import { getAllSongData } from "../lib/songs";
 
 export default function Home({ songData }) {
-  const featuredSong = [songData].flatMap((songs) => {
+  const featuredSongs = [songData].flatMap((songs) => {
     const songJson = JSON.parse(songs);
     return songJson.filter(function (song) {
       return song.data.featured;
@@ -33,8 +33,10 @@ export default function Home({ songData }) {
           </h4>
         </div>
         {/* Featured Music */}
-        <div className="my-20 mx-auto max-w-3xl">
-          <SongCard song={featuredSong[0]} header="Featured Music" />
+        <div className="my-20 mx-auto max-w-3xl flex flex-col gap-y-8">
+          {featuredSongs.map((item) => (
+            <SongCard song={item} />
+          ))}
         </div>
       </div>
     </div>
