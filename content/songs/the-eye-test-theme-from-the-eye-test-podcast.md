@@ -5,9 +5,7 @@ artist: Cobez
 date: Apr 10, 2022
 artwork: /images/cms/theme-song-art.jpg
 featured: true
-description: The Eye Test is a sports podcast, hosted by my good friend Brian
-  Donovan. I currently produce the show - editing the episodes and prepping them
-  for release. This song is the extended version of the intro theme music that I
+description: This is the extended version of the intro theme music that I
   created for the show.
 links:
   spotify: https://open.spotify.com/track/0gLGKcUMjGQQ8aimmgjtL8?si=c6ed19eddf234a51

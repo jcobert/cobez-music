@@ -33,10 +33,20 @@ export default function Home({ songData }) {
           </h4>
         </div>
         {/* Featured Music */}
-        <div className="my-20 mx-auto max-w-3xl flex flex-col gap-y-8">
-          {featuredSongs.map((item) => (
-            <SongCard song={item} />
-          ))}
+        <div className="my-20 w-11/12 mx-auto">
+          {/* Header */}
+          <div className="h-16 mx-auto max-w-3xl rounded-t-md bg-theme-primary border border-b-0 border-theme-secondary flex items-center justify-center md:justify-start md:pl-4">
+            <h1 className="text-white text-3xl md:text-3xl text-center md:text-left font-bellotaHeading font-bold">
+              Featured Music
+            </h1>
+          </div>
+          <div className="mx-auto max-w-3xl bg-theme-tertiary/90 border border-t-0 border-theme-secondary rounded-b p-4 md:p-8">
+            <div className="flex flex-col gap-y-8">
+              {featuredSongs.map((item) => (
+                <SongCard song={item} />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </div>
