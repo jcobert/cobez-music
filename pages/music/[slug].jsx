@@ -31,7 +31,7 @@ function Music({ frontmatter, markdown }) {
   const body = markdown;
 
   return (
-    <div>
+    <div className="bg-white/90 py-4">
       <div className="flex flex-col md:flex-row gap-x-4 justify-center items-center">
         {/* Album artwork */}
         <div className="w-8/12 sm:w-6/12 md:w-4/12 max-w-xs p-4">
