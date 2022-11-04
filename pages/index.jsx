@@ -2,6 +2,9 @@ import Head from "next/head";
 import Script from "next/script";
 import SongCard from "../components/SongCard";
 import { getAllSongData } from "../lib/songs";
+import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowAltCircleRight } from "@fortawesome/free-regular-svg-icons";
 
 export default function Home({ songData }) {
   const featuredSongs = [songData].flatMap((songs) => {
@@ -45,6 +48,17 @@ export default function Home({ songData }) {
               {featuredSongs.map((item) => (
                 <SongCard song={item} />
               ))}
+            </div>
+            {/* Music Page Link */}
+            <div className="text-center mt-6 md:mt-2 py-4 md:pb-0">
+              <Link href="/music">
+                <a className="inline-block rounded-md p-4 md:p-2 w-9/12 sm:max-w-[12rem] border border-theme-primary hover:border-white bg-white hover:bg-theme-primary text-theme-primary hover:text-white text-lg md:text-base font-bold transition">
+                  <div className="flex gap-x-2 justify-center items-center">
+                    <span>All Music</span>
+                    <FontAwesomeIcon icon={faArrowAltCircleRight} />
+                  </div>
+                </a>
+              </Link>
             </div>
           </div>
         </div>

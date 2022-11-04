@@ -31,7 +31,7 @@ function Music({ frontmatter, markdown }) {
   const body = markdown;
 
   return (
-    <div className="bg-white/90 py-4">
+    <div className="bg-white/95 py-4">
       <div className="flex flex-col md:flex-row gap-x-4 justify-center items-center">
         {/* Album artwork */}
         <div className="w-8/12 sm:w-6/12 md:w-4/12 max-w-xs p-4">
@@ -52,7 +52,7 @@ function Music({ frontmatter, markdown }) {
             <h6 className="text-xs">{song.date}</h6>
           </div>
           {/* Stream Links */}
-          <div className="flex justify-around md:justify-evenly text-4xl md:text-3xl md:mt-4 p-2">
+          <div className="flex justify-around md:justify-center md:gap-x-16 text-4xl md:text-3xl md:mt-4 p-2">
             <a href={song.links.spotify}>
               <FontAwesomeIcon icon={faSpotify} />
             </a>
