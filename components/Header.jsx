@@ -109,8 +109,9 @@ function Header() {
                         <Link key={item.name} href={item.to}>
                           <a
                             className={`text-lg transition-all px-3 py-2 rounded-md text-theme-primary hover:bg-theme-primary hover:text-white ${
-                              (visible ? "" : "text-lg py-0",
-                              router.asPath === item.to ? activeLinkStyle : "")
+                              visible ? "" : "text-lg py-0"
+                            } ${
+                              router.asPath === item.to ? activeLinkStyle : ""
                             }`}
                             aria-current={item.current ? "page" : undefined}
                             onClick={close}
