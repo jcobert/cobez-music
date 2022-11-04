@@ -62,10 +62,11 @@ function SongCard(props) {
               </div>
               {/* Read More Button */}
               <div className="w-full text-center flex-1">
-                {/* <button className="rounded-md p-4 md:p-2 md:w-8/12 w-10/12 sm:max-w-[12rem] bg-theme-primary hover:bg-theme-secondary text-white text-lg md:text-base transition-all">
-                  Read More
-                </button> */}
-                <Link href={`/music/${song.slug}`}><a className="block mx-auto rounded-md p-4 md:p-2 md:w-8/12 w-10/12 sm:max-w-[12rem] bg-theme-primary hover:bg-theme-secondary text-white text-lg md:text-base transition-all">Read More</a></Link>
+                <Link href={`/music/${song.slug}`}>
+                  <a className="block mx-auto rounded-md p-4 md:p-2 md:w-8/12 w-10/12 sm:max-w-[12rem] bg-theme-primary hover:bg-theme-secondary text-white text-lg md:text-base transition-all">
+                    Read More
+                  </a>
+                </Link>
               </div>
             </div>
           </div>

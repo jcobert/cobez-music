@@ -33,7 +33,7 @@ export default function Home({ songData }) {
           </h4>
         </div>
         {/* Featured Music */}
-        <div className="my-20 w-11/12 mx-auto">
+        <div className="my-20 md:mt-28 lg:mt-32 w-11/12 mx-auto">
           {/* Header */}
           <div className="h-16 mx-auto max-w-3xl rounded-t-md bg-theme-primary border border-b-0 border-theme-secondary flex items-center justify-center md:justify-start md:pl-4">
             <h1 className="text-white text-3xl md:text-3xl text-center md:text-left font-bellotaHeading font-bold">
