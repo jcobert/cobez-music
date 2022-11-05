@@ -10,7 +10,7 @@ function SongCard(props) {
   const song = props.song;
 
   return (
-    <div className="shadow">
+    <div className="shadow rounded-md">
       {/* Header */}
       {/* <div className="h-12 rounded-t-md bg-theme-primary flex items-center justify-center md:justify-start md:pl-4">
         <h1 className="text-white text-3xl md:text-3xl text-center md:text-left font-bellotaHeading font-bold">

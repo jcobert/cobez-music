@@ -43,6 +43,7 @@ export default function Home({ songData }) {
               Featured Music
             </h1>
           </div>
+          {/* Body */}
           <div className="mx-auto max-w-3xl bg-theme-tertiary/90 border border-t-0 border-theme-secondary rounded-b p-4 md:p-8">
             <div className="flex flex-col gap-y-8">
               {featuredSongs.map((item) => (
@@ -52,7 +53,7 @@ export default function Home({ songData }) {
             {/* Music Page Link */}
             <div className="text-center mt-6 md:mt-2 py-4 md:pb-0">
               <Link href="/music">
-                <a className="inline-block rounded-md p-4 md:p-2 w-9/12 sm:max-w-[12rem] border border-theme-primary hover:border-white bg-white hover:bg-theme-primary text-theme-primary hover:text-white text-lg md:text-base font-bold transition">
+                <a className="inline-block rounded-md p-4 md:p-2 w-9/12 sm:max-w-[12rem] border border-theme-primary bg-white hover:bg-theme-primary text-theme-primary hover:text-white text-lg md:text-base font-bold transition">
                   <div className="flex gap-x-2 justify-center items-center">
                     <span>All Music</span>
                     <FontAwesomeIcon icon={faArrowAltCircleRight} />
