@@ -72,13 +72,13 @@ function Music({ frontmatter, markdown }) {
           {/* Stream Links */}
           <div className="flex justify-around md:justify-center md:gap-x-16 text-4xl md:text-3xl text-theme-tertiary mt-4 p-2">
             <a href={song.links.spotify}>
-              <FontAwesomeIcon icon={faSpotify} />
+              <FontAwesomeIcon className="hover:text-theme-primary transition" icon={faSpotify} />
             </a>
             <a href={song.links.apple}>
-              <FontAwesomeIcon icon={faApple} />
+              <FontAwesomeIcon className="hover:text-theme-primary transition" icon={faApple} />
             </a>
             <a href={song.links.youtube}>
-              <FontAwesomeIcon icon={faYoutube} />
+              <FontAwesomeIcon className="hover:text-theme-primary transition" icon={faYoutube} />
             </a>
           </div>
           {/* Credits */}

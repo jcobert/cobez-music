@@ -42,19 +42,19 @@ function SongCard(props) {
               {/* Stream Links */}
               <div className="flex w-full md:w-9/12 items-center justify-around md:justify-evenly text-5xl md:text-4xl text-theme-tertiary p-2 flex-1">
                 <a
-                  className="hover:text-theme-secondary transition"
+                  className="hover:text-theme-primary transition"
                   href={song.data.links.spotify}
                 >
                   <FontAwesomeIcon icon={faSpotify} />
                 </a>
                 <a
-                  className="hover:text-theme-secondary transition"
+                  className="hover:text-theme-primary transition"
                   href={song.data.links.apple}
                 >
                   <FontAwesomeIcon icon={faApple} />
                 </a>
                 <a
-                  className="hover:text-theme-secondary transition"
+                  className="hover:text-theme-primary transition"
                   href={song.data.links.youtube}
                 >
                   <FontAwesomeIcon icon={faYoutube} />
@@ -63,7 +63,7 @@ function SongCard(props) {
               {/* Read More Button */}
               <div className="w-full text-center flex-1 mb-4 md:mb-0">
                 <Link href={`/music/${song.slug}`}>
-                  <a className="block mx-auto rounded-md p-4 md:p-2 md:w-9/12 w-10/12 sm:max-w-[12rem] bg-theme-primary hover:bg-theme-secondary text-white text-lg md:text-base transition-all">
+                  <a className="block mx-auto rounded-md p-4 md:p-2 md:w-9/12 w-10/12 sm:max-w-[12rem] bg-theme-primary hover:bg-theme-tertiary text-white text-lg md:text-base transition-all">
                     Read More
                   </a>
                 </Link>
