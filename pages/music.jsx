@@ -10,7 +10,7 @@ export default function Music({ songData }) {
   });
 
   return (
-    <div className="">
+    <div className="md:mt-10">
       <Head>
         <title>Music | Cobez Music</title>
         <meta name="description" content="Official website of Cobez" />

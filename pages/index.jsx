@@ -15,7 +15,7 @@ export default function Home({ songData }) {
   });
 
   return (
-    <div>
+    <div className="mt-8">
       <Head>
         <title>Cobez Music</title>
         <meta name="description" content="Official website of Cobez" />
