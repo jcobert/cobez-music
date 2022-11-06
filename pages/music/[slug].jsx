@@ -8,6 +8,8 @@ import {
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
 
+const credits = ["songwriter", "producer", "engineer"];
+
 export async function getStaticPaths() {
   const paths = getAllSongIds();
   return {
@@ -46,10 +48,25 @@ function Music({ frontmatter, markdown }) {
         {/* Info and Links */}
         <div className="w-full md:w-fit">
           {/* Title, Artist, Release Date */}
-          <div className="flex flex-col gap-y-1 text-center py-4 px-2">
-            <h2 className="text-xl">{song.title}</h2>
+          <div className="flex flex-col gap-y-1 text-center pt-4 px-2">
+            <h2 className="text-xl font-bold">{song.title}</h2>
             <h4 className="text-lg">{song.artist}</h4>
-            <h6 className="text-xs">{song.date}</h6>
+            <h6 className="text-sm text-theme-tertiary">{song.date}</h6>
+          </div>
+          {/* Credits */}
+          <div className="py-4">
+            <span className="block mx-auto w-10/12 border-b"></span>
+            <div className="flex justify-center gap-x-1 py-4 px-6 flex-wrap">
+              <span className="font-bold text-gray-700">Credits:</span>
+              {credits.map((credit, i) => {
+                let delimiter = ",";
+                if (i === credits.length - 1) {
+                  delimiter = "";
+                }
+                return <span>{`${credit}${delimiter}`}</span>;
+              })}
+            </div>
+            <span className="block mx-auto w-10/12 border-b"></span>
           </div>
           {/* Stream Links */}
           <div className="flex justify-around md:justify-center md:gap-x-16 text-4xl md:text-3xl text-theme-tertiary md:mt-4 p-2">
