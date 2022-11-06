@@ -7,6 +7,8 @@ import {
   faApple,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
+import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
+import Link from "next/link";
 
 const credits = ["songwriter", "producer", "engineer"];
 
@@ -34,6 +36,20 @@ function Music({ frontmatter, markdown }) {
 
   return (
     <div className="bg-white/95 pt-4 md:pt-12 pb-16 md:pb-2 min-h-screen">
+      {/* Page Nav Link */}
+      <div className="w-constrain py-4">
+        <Link href="/music">
+          <a className="w-fit group text-theme-tertiary flex items-center gap-x-2 px-4 sm:px-0">
+            <FontAwesomeIcon
+              className="text-theme-tertiary group-hover:text-theme-primary transition"
+              icon={faAngleLeft}
+            />
+            <span className="font-bold group-hover:text-theme-primary transition">
+              All music
+            </span>
+          </a>
+        </Link>
+      </div>
       <div className="flex flex-col md:flex-row gap-x-4 justify-center items-center">
         {/* Album artwork */}
         <div className="w-8/12 sm:w-6/12 md:w-4/12 max-w-xs p-4">
