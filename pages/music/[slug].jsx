@@ -69,6 +69,18 @@ function Music({ frontmatter, markdown }) {
             <h4 className="text-lg">{song.artist}</h4>
             <h6 className="text-sm text-theme-tertiary">{song.date}</h6>
           </div>
+          {/* Stream Links */}
+          <div className="flex justify-around md:justify-center md:gap-x-16 text-4xl md:text-3xl text-theme-tertiary mt-4 p-2">
+            <a href={song.links.spotify}>
+              <FontAwesomeIcon icon={faSpotify} />
+            </a>
+            <a href={song.links.apple}>
+              <FontAwesomeIcon icon={faApple} />
+            </a>
+            <a href={song.links.youtube}>
+              <FontAwesomeIcon icon={faYoutube} />
+            </a>
+          </div>
           {/* Credits */}
           <div className="py-4">
             <span className="block mx-auto w-10/12 border-b"></span>
@@ -83,18 +95,6 @@ function Music({ frontmatter, markdown }) {
               })}
             </div>
             <span className="block mx-auto w-10/12 border-b"></span>
-          </div>
-          {/* Stream Links */}
-          <div className="flex justify-around md:justify-center md:gap-x-16 text-4xl md:text-3xl text-theme-tertiary md:mt-4 p-2">
-            <a href={song.links.spotify}>
-              <FontAwesomeIcon icon={faSpotify} />
-            </a>
-            <a href={song.links.apple}>
-              <FontAwesomeIcon icon={faApple} />
-            </a>
-            <a href={song.links.youtube}>
-              <FontAwesomeIcon icon={faYoutube} />
-            </a>
           </div>
         </div>
       </div>
