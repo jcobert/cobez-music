@@ -7,6 +7,10 @@ import {
   faApple,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
+import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
+import Link from "next/link";
+
+const credits = ["songwriter", "producer", "engineer"];
 
 export async function getStaticPaths() {
   const paths = getAllSongIds();
@@ -31,7 +35,21 @@ function Music({ frontmatter, markdown }) {
   const body = markdown;
 
   return (
-    <div>
+    <div className="bg-white/95 pt-4 md:pt-12 pb-16 md:pb-2 min-h-screen">
+      {/* Page Nav Link */}
+      <div className="w-constrain py-4">
+        <Link href="/music">
+          <a className="w-fit group text-theme-tertiary flex items-center gap-x-2 px-4 sm:px-0">
+            <FontAwesomeIcon
+              className="text-theme-tertiary group-hover:text-theme-primary transition"
+              icon={faAngleLeft}
+            />
+            <span className="font-bold group-hover:text-theme-primary transition">
+              All music
+            </span>
+          </a>
+        </Link>
+      </div>
       <div className="flex flex-col md:flex-row gap-x-4 justify-center items-center">
         {/* Album artwork */}
         <div className="w-8/12 sm:w-6/12 md:w-4/12 max-w-xs p-4">
@@ -41,27 +59,52 @@ function Music({ frontmatter, markdown }) {
             height={500}
             layout="responsive"
             alt="Album artwork"
+            style={{ borderRadius: 5 }}
           />
         </div>
         {/* Info and Links */}
-        <div>
+        <div className="w-full md:w-fit">
           {/* Title, Artist, Release Date */}
-          <div className="flex flex-col gap-y-1 text-center py-4 px-2">
-            <h2 className="text-xl">{song.title}</h2>
+          <div className="flex flex-col gap-y-1 text-center pt-4 px-2">
+            <h2 className="text-xl font-bold">{song.title}</h2>
             <h4 className="text-lg">{song.artist}</h4>
-            <h6 className="text-xs">{song.date}</h6>
+            <h6 className="text-sm text-theme-tertiary">{song.date}</h6>
           </div>
           {/* Stream Links */}
-          <div className="flex justify-around md:justify-evenly text-4xl md:text-3xl md:mt-4 p-2">
+          <div className="flex justify-around md:justify-center md:gap-x-16 text-4xl md:text-3xl text-theme-tertiary mt-4 p-2">
             <a href={song.links.spotify}>
-              <FontAwesomeIcon icon={faSpotify} />
+              <FontAwesomeIcon
+                className="hover:text-theme-primary transition"
+                icon={faSpotify}
+              />
             </a>
             <a href={song.links.apple}>
-              <FontAwesomeIcon icon={faApple} />
+              <FontAwesomeIcon
+                className="hover:text-theme-primary transition"
+                icon={faApple}
+              />
             </a>
             <a href={song.links.youtube}>
-              <FontAwesomeIcon icon={faYoutube} />
+              <FontAwesomeIcon
+                className="hover:text-theme-primary transition"
+                icon={faYoutube}
+              />
             </a>
+          </div>
+          {/* Credits */}
+          <div className="py-4">
+            <span className="block mx-auto w-10/12 border-b"></span>
+            <div className="flex justify-center gap-x-1 py-4 px-6 flex-wrap">
+              <span className="font-bold text-gray-700">Credits:</span>
+              {credits.map((credit, i) => {
+                let delimiter = ",";
+                if (i === credits.length - 1) {
+                  delimiter = "";
+                }
+                return <span>{`${credit}${delimiter}`}</span>;
+              })}
+            </div>
+            <span className="block mx-auto w-10/12 border-b"></span>
           </div>
         </div>
       </div>
