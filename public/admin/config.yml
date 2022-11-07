@@ -16,9 +16,21 @@ collections:
       - { label: "Layout", name: "layout", widget: "hidden", default: "music" }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Artist", name: "artist", widget: "string" }
-      - { label: "Release Date", name: "date", widget: "datetime", format: "MMM D, YYYY", date_format: "MM/D/YYYY", time_format: false }
+      - {
+          label: "Release Date",
+          name: "date",
+          widget: "datetime",
+          format: "MMM D, YYYY",
+          date_format: "MM/D/YYYY",
+          time_format: false,
+        }
       - { label: "Artwork", name: "artwork", widget: "image" }
-      - { label: "Featured on Homepage", name: "featured", widget: "boolean", required: false }
+      - {
+          label: "Featured on Homepage",
+          name: "featured",
+          widget: "boolean",
+          required: false,
+        }
       - { label: "Description", name: "description", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
       - label: "Stream Links"
@@ -28,3 +40,17 @@ collections:
           - { label: "Spotify", name: "spotify", widget: "string" }
           - { label: "Apple Music", name: "apple", widget: "string" }
           - { label: "Youtube", name: "youtube", widget: "string" }
+      - {
+          label: "Credits",
+          name: "credits",
+          widget: "list",
+          summary: "{{fields.credit}}",
+          field:
+            {
+              label: "Credit",
+              name: "credit",
+              widget: "select",
+              options:
+                ["Songwriter", "Producer", "Recording Engineer", "Vocals"],
+            },
+        }

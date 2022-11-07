@@ -10,8 +10,6 @@ import {
 import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 
-const credits = ["songwriter", "producer", "engineer"];
-
 export async function getStaticPaths() {
   const paths = getAllSongIds();
   return {
@@ -96,12 +94,12 @@ function Music({ frontmatter, markdown }) {
             <span className="block mx-auto w-10/12 border-b"></span>
             <div className="flex justify-center gap-x-1 py-4 px-6 flex-wrap">
               <span className="font-bold text-gray-700">Credits:</span>
-              {credits.map((credit, i) => {
+              {song.credits?.map((credit, i) => {
                 let delimiter = ",";
-                if (i === credits.length - 1) {
+                if (i === song.credits.length - 1) {
                   delimiter = "";
                 }
-                return <span>{`${credit}${delimiter}`}</span>;
+                return <span>{`${credit.toLowerCase()}${delimiter}`}</span>;
               })}
             </div>
             <span className="block mx-auto w-10/12 border-b"></span>

@@ -1,4 +1,8 @@
 ---
+credits:
+  - Songwriter
+  - Producer
+  - Vocals
 layout: music
 title: The Eye Test (Theme from The Eye Test Podcast)
 artist: Cobez
