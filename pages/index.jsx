@@ -37,33 +37,33 @@ export default function Home({ songData }) {
         </div>
         {/* Featured Music Section */}
         <section className="bg-gray-100">
-          <div className="mt-20 md:mt-24 lg:mt-24 w-11/12 mx-auto pt-8 md:py-20">
+          <div className="mt-20 md:mt-24 lg:mt-24 w-11/12 mx-auto pt-8 pb-12 md:pt-16 md:pb-20">
+            {/* Header */}
+            <div className="h-16 mx-auto max-w-3xl flex items-center justify-center md:justify-start md:pl-4 border-l-4 border-theme-primary border-b-4 rounded-bl-md mb-4 md:mb-12">
+              <h1 className="text-theme-primary text-3xl md:text-3xl text-center md:text-left font-bellotaHeading font-bold">
+                Featured Music
+              </h1>
+            </div>
             <div className="w-fit mx-auto rounded-md shadow">
-              {/* Header */}
-              <div className="h-16 mx-auto max-w-3xl rounded-t-md bg-theme-primary border border-b-0 flex items-center justify-center md:justify-start md:pl-4">
-                <h1 className="text-white text-3xl md:text-3xl text-center md:text-left font-bellotaHeading font-bold">
-                  Featured Music
-                </h1>
-              </div>
               {/* Body */}
-              <div className="mx-auto max-w-3xl bg-white border border-t-0 rounded-b p-4 md:p-8">
+              <div className="mx-auto max-w-3xl bg-white border rounded p-4 md:p-8">
                 <div className="flex flex-col gap-y-8">
                   {featuredSongs.map((item) => (
                     <SongCard song={item} />
                   ))}
                 </div>
-                {/* Music Page Link */}
-                <div className="text-center mt-6 md:mt-2 py-4 md:pb-0">
-                  <Link href="/music">
-                    <a className="inline-block rounded-md p-4 md:p-2 w-9/12 sm:max-w-[12rem] border border-theme-primary bg-white hover:bg-theme-primary text-theme-primary hover:text-white text-lg md:text-base font-bold transition">
-                      <div className="flex gap-x-2 justify-center items-center">
-                        <span>All Music</span>
-                        <FontAwesomeIcon icon={faArrowRight} />
-                      </div>
-                    </a>
-                  </Link>
-                </div>
               </div>
+            </div>
+            {/* Music Page Link */}
+            <div className="text-center mt-8 md:mt-12 py-2 md:pb-0">
+              <Link href="/music">
+                <a className="inline-block rounded-md p-4 md:p-2 w-9/12 sm:max-w-[12rem] border border-theme-primary bg-white hover:bg-theme-primary text-theme-primary hover:text-white text-lg md:text-base font-bold transition">
+                  <div className="flex gap-x-2 justify-center items-center">
+                    <span>All Music</span>
+                    <FontAwesomeIcon icon={faArrowRight} />
+                  </div>
+                </a>
+              </Link>
             </div>
           </div>
         </section>
