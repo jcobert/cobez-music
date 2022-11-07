@@ -10,7 +10,7 @@ export default function Music({ songData }) {
   });
 
   return (
-    <div className="md:pt-10 bg-theme-primary">
+    <div className="bg-theme-primary">
       <Head>
         <title>Music | Cobez Music</title>
         <meta name="description" content="Official website of Cobez" />

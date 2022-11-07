@@ -11,20 +11,14 @@ function SongCard(props) {
 
   return (
     <div className="shadow rounded-md">
-      {/* Header */}
-      {/* <div className="h-12 rounded-t-md bg-theme-primary flex items-center justify-center md:justify-start md:pl-4">
-        <h1 className="text-white text-3xl md:text-3xl text-center md:text-left font-bellotaHeading font-bold">
-          {props.header}
-        </h1>
-      </div> */}
       {/* Content */}
-      <div className="border bg-slate-50 py-4 pt-0 rounded-md">
+      <div className="border bg-slate-50 pb-4 md:pb-0 rounded-md">
         <div className="flex flex-col md:flex-row justify-center items-center px-4">
           {/* Artwork */}
           <div className="h-56 w-56 flex items-center justify-center">
             <div
               className="bg-contain bg-no-repeat bg-center p-24"
-              style={{ backgroundImage: `url(${song.data.artwork})` }}
+              style={{ backgroundImage: `url(${song.data.artwork})`, borderRadius: 5 }}
             ></div>
           </div>
           {/* Body */}
@@ -60,11 +54,11 @@ function SongCard(props) {
                   <FontAwesomeIcon icon={faYoutube} />
                 </a>
               </div>
-              {/* Read More Button */}
+              {/* Learn More Button */}
               <div className="w-full text-center flex-1 mb-4 md:mb-0">
                 <Link href={`/music/${song.slug}`}>
                   <a className="block mx-auto rounded-md p-4 md:p-2 md:w-9/12 w-10/12 sm:max-w-[12rem] bg-theme-primary hover:bg-theme-tertiary text-white text-lg md:text-base transition-all">
-                    Read More
+                    Learn More
                   </a>
                 </Link>
               </div>
