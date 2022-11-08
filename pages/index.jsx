@@ -2,6 +2,7 @@ import Head from "next/head";
 import Script from "next/script";
 import SongCard from "../components/SongCard";
 import { getAllSongData } from "../lib/songs";
+import Image from "next/future/image";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
@@ -26,9 +27,11 @@ export default function Home({ songData }) {
       <div>
         {/* Heading/Hero */}
         <div className="px-10">
-          <img
+          <Image
             className="mx-auto w-full max-w-xl"
             src="/images/cobez-logo.svg"
+            width={200}
+            height={100}
             alt="Cobez logo"
           />
           <h4 className="font-bellotaHeading font-bold text-3xl text-center text-white mt-2">
