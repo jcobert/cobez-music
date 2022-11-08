@@ -24,8 +24,8 @@ export default function Music({ songData }) {
       <section className="mt-8 md:mt-12 lg:mt-12 mx-auto bg-white py-4 pb-12 md:py-16">
         <div className="mx-auto max-w-3xl border-theme-secondary rounded-md px-4 md:p-0">
           <div className="flex flex-col gap-y-8">
-            {featuredSongs.map((item) => (
-              <SongCard song={item} />
+            {featuredSongs.map((item, i) => (
+              <SongCard key={i} song={item} />
             ))}
           </div>
         </div>

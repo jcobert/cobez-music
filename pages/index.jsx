@@ -51,8 +51,8 @@ export default function Home({ songData }) {
               {/* Body */}
               <div className="mx-auto max-w-3xl bg-white border rounded p-4 md:p-8">
                 <div className="flex flex-col gap-y-8">
-                  {featuredSongs.map((item) => (
-                    <SongCard song={item} />
+                  {featuredSongs.map((item, i) => (
+                    <SongCard key={i} song={item} />
                   ))}
                 </div>
               </div>
