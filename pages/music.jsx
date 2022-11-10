@@ -30,16 +30,19 @@ export default function Music({ songData }) {
           {/* Sort and Filter */}
           <div className="flex justify-end pb-4">
             <div className="flex justify-center items-center text-2xl text-theme-tertiary gap-x-4">
-              <button onClick={() => setViewType("list")}>
+              <button className={`${viewType === "list" ? "outline" : ""} p-1 rounded flex outline-gray-300`} onClick={() => setViewType("list")}>
                 <FontAwesomeIcon icon={faList} />
               </button>
-              <button onClick={() => setViewType("grid")}>
+              <button className={`${viewType === "grid" ? "outline" : ""} p-1 rounded flex outline-gray-300`} onClick={() => setViewType("grid")}>
                 <FontAwesomeIcon icon={faGrip} />
               </button>
             </div>
           </div>
           {/* Songs */}
-          <div className="flex flex-col gap-y-8">
+          {/* to do display grid when viewtype is grid */}
+          <div
+            className={`${viewType === "grid" ? "" : "flex flex-col gap-y-8"}`}
+          >
             {featuredSongs.map((item, i) => (
               <SongCard key={i} song={item} view={viewType} />
             ))}
