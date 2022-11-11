@@ -26,22 +26,21 @@ export default function Music({ songData }) {
       </section>
       {/* Main Content */}
       <section className="mt-8 md:mt-12 lg:mt-12 mx-auto bg-white py-4 pb-12 md:py-16">
-        <div className="mx-auto max-w-3xl border-theme-secondary rounded-md px-4 md:p-0">
+        <div className={`mx-auto border-theme-secondary rounded-md px-4 md:p-0 ${viewType === "grid" ? "max-w-3xl lg:max-w-5xl" : "max-w-3xl"}`}>
           {/* Sort and Filter */}
           <div className="flex justify-end pb-4">
             <div className="flex justify-center items-center text-2xl text-theme-tertiary gap-x-4">
-              <button className={`${viewType === "list" ? "outline" : ""} p-1 rounded flex outline-gray-300`} onClick={() => setViewType("list")}>
+              <button className={`${viewType === "list" ? "outline text-theme-primary" : ""} p-1 rounded flex outline-gray-300`} onClick={() => setViewType("list")}>
                 <FontAwesomeIcon icon={faList} />
               </button>
-              <button className={`${viewType === "grid" ? "outline" : ""} p-1 rounded flex outline-gray-300`} onClick={() => setViewType("grid")}>
+              <button className={`${viewType === "grid" ? "outline text-theme-primary" : ""} p-1 rounded flex outline-gray-300`} onClick={() => setViewType("grid")}>
                 <FontAwesomeIcon icon={faGrip} />
               </button>
             </div>
           </div>
           {/* Songs */}
-          {/* to do display grid when viewtype is grid */}
           <div
-            className={`${viewType === "grid" ? "" : "flex flex-col gap-y-8"}`}
+            className={`${viewType === "grid" ? "grid grid-cols-1 gap-y-8 gap-x-4 md:grid-cols-2 lg:grid-cols-3" : "flex flex-col gap-y-8"}`}
           >
             {featuredSongs.map((item, i) => (
               <SongCard key={i} song={item} view={viewType} />
