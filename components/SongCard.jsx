@@ -32,12 +32,12 @@ function SongCard(props) {
           {/* Body */}
           <div className="flex flex-col items-center gap-y-4 md:gap-y-2 md:pl-5 mt-3 md:mt-0 md:py-4 md:flex-1 lg:pr-2">
             {/* Title */}
-            <div className="flex flex-col items-center md:items-start md:self-start text-center md:text-left">
+            <div className="flex flex-col items-center md:items-start md:self-start text-center md:text-left lg:w-full lg:pr-6">
               <h4 className="text-lg font-bold">{song.data.title}</h4>
               <h5 className="text-slate-800 font-bold">{song.data.artist}</h5>
             </div>
             {/* Description */}
-            <div className="md:self-start lg:w-11/12">
+            <div className="md:self-start lg:w-full lg:pr-6 text-theme-tertiary">
               <p>{song.data.description}</p>
             </div>
             <div className="flex flex-col md:flex-row w-full justify-center items-center gap-y-4 lg:hidden">
