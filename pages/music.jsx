@@ -26,7 +26,7 @@ export default function Music({ songData }) {
       </section>
       {/* Main Content */}
       <section className="mt-8 md:mt-12 lg:mt-12 mx-auto bg-white py-4 pb-12 md:py-16">
-        <div className={`mx-auto border-theme-secondary rounded-md px-4 md:p-0 ${viewType === "grid" ? "max-w-3xl lg:max-w-5xl" : "max-w-3xl"}`}>
+        <div className={`mx-auto border-theme-secondary rounded-md px-4 md:p-0 ${viewType === "grid" ? "max-w-3xl lg:max-w-5xl" : "max-w-3xl lg:max-w-5xl"}`}>
           {/* Sort and Filter */}
           <div className="flex justify-end pb-4">
             <div className="flex justify-center items-center text-2xl text-theme-tertiary gap-x-4">
