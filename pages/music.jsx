@@ -20,15 +20,29 @@ export default function Music({ songData }) {
   // States
   const [viewType, setViewType] = useState("list");
   const [filtered, setFiltered] = useState(false);
-  const [reset, setReset] = useState(false);
+  const [reset, setReset] = useState(true);
   const [selection, setSelection] = useState(songs);
+  const [filterSetArtist, setFilterSetArtist] = useState(songs);
+  const [filterSetGenre, setFilterSetGenre] = useState(songs);
 
   // Filter Arrays
   let artists = [];
   songs.map((song) => artists.push(song.data.artist));
+  artists.sort();
   artists.unshift("All");
 
+  let genres = [];
+  songs.map((song) => {
+    if (song.data.genre) {
+      genres.push(song.data.genre);
+    }
+  });
+  genres.sort();
+  genres.unshift("All");
+
   function handleResetClick() {
+    setFilterSetArtist(songs);
+    setFilterSetGenre(songs);
     setFiltered(false);
     setSelection(songs);
     setReset(true);
@@ -66,6 +80,9 @@ export default function Music({ songData }) {
                   setFilteredState={setFiltered}
                   selectionState={selection}
                   setSelectionState={setSelection}
+                  filterSetArtist={filterSetArtist}
+                  setFilterSetArtist={setFilterSetArtist}
+                  filterSetGenre={filterSetGenre}
                   songSelection={songs}
                   filter="artist"
                   title="Artist"
@@ -74,20 +91,23 @@ export default function Music({ songData }) {
                 />
               </div>
               {/* Genre */}
-              {/* <div className="w-full flex-1">
+              <div className="w-full flex-1">
                 <FilterDropdown
-                  options={artists}
+                  options={genres}
                   filteredState={filtered}
                   setFilteredState={setFiltered}
                   selectionState={selection}
                   setSelectionState={setSelection}
+                  filterSetGenre={filterSetGenre}
+                  setFilterSetGenre={setFilterSetGenre}
+                  filterSetArtist={filterSetArtist}
                   songSelection={songs}
-                  filter="artist"
+                  filter="genre"
                   title="Genre"
                   reset={reset}
                   resetState={setReset}
                 />
-              </div> */}
+              </div>
               {/* Reset Button */}
               <div className="w-full md:w-24 mx-auto self-end text-base md:text-sm">
                 <button

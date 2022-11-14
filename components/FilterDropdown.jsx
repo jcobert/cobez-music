@@ -13,38 +13,56 @@ function classNames(...classes) {
 function FilterDropdown(props) {
   const [selected, setSelected] = useState("All");
 
-  const items = props.options;
+  const options = props.options;
 
   useEffect(() => {
     handleFilter();
   }, [selected]);
 
-  function filterSongsByArtist(artist) {
-    return props.songSelection.filter(function (song) {
-      return song.data.artist === artist;
-    });
+  useEffect(() => {
+    if (props.reset) {
+      setSelected("All");
+    }
+  }, [props.reset]);
+
+  function filterSongs(filterType, selected) {
+    if (filterType === "artist") {
+      if (selected !== "All") {
+        return props.filterSetGenre.filter(function (song) {
+          return song.data.artist === selected;
+        });
+      }
+    }
+    if (filterType === "genre") {
+      if (selected !== "All") {
+        return props.filterSetArtist.filter(function (song) {
+          return song.data.genre === selected;
+        });
+      }
+    }
   }
 
   const handleFilter = useCallback(() => {
+    let filteredSelection = props.songSelection;
     if (selected === "All") {
-      props.setSelectionState(props.songSelection);
       props.setFilteredState(false);
     } else {
-      props.setSelectionState(filterSongsByArtist(selected));
+      filteredSelection = filterSongs(props.filter, selected);
       props.setFilteredState(true);
     }
+    props.setSelectionState(filteredSelection);
   });
 
   const handleChange = useCallback((e) => {
-    setSelected(e);
     if (props.reset) {
       props.resetState(false);
     }
+    setSelected(e);
   });
 
   return (
     <div className="w-full">
-      <Listbox value={props.reset ? "Any" : selected} onChange={handleChange}>
+      <Listbox value={props.reset ? "All" : selected} onChange={handleChange}>
         {({ open }) => (
           <>
             <Listbox.Label className="block text-sm text-gray-700">
@@ -55,7 +73,7 @@ function FilterDropdown(props) {
                 <span className="flex items-center">
                   <FunnelIcon className="h-5 w-5" aria-hidden="true" />
                   <span className="ml-3 block truncate">
-                    {props.reset ? "Any" : selected}
+                    {props.reset ? "All" : selected}
                   </span>
                 </span>
                 <span className="ml-3 absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
@@ -67,7 +85,7 @@ function FilterDropdown(props) {
               </Listbox.Button>
               <Transition show={open} as={Fragment}>
                 <Listbox.Options className="absolute z-10 mt-1 w-full divide-y divide-slate-100 bg-white shadow-lg max-h-96 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm">
-                  {items.map((item, i) => (
+                  {options.map((item, i) => (
                     <Listbox.Option
                       key={i}
                       className={({ active }) =>
@@ -75,8 +93,7 @@ function FilterDropdown(props) {
                           active
                             ? "text-white bg-theme-primary"
                             : "text-slate-700",
-                          "cursor-default select-none relative pl-3 pr-9",
-                          props.filter !== "artist" ? "py-4 md:py-2" : "py-2"
+                          "cursor-default select-none relative pl-3 pr-9 py-2"
                         )
                       }
                       value={item}
