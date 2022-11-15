@@ -147,7 +147,26 @@ export default function Music({ songData }) {
               </div>
             </div>
           </div>
-          {/* Songs */}
+          {/* No Results Message */}
+          <div
+            className={
+              selection.length === 0 ? "flex flex-col gap-y-2 mt-16" : "hidden"
+            }
+          >
+            <div className="flex justify-center items-center gap-x-2">
+              <span className="text-3xl">😕</span>
+              <p className="text-center">No songs found...</p>
+            </div>
+            <div className="flex justify-center">
+              <button
+                className="text-center text-theme-primary hover:text-theme-tertiary font-bold cursor-pointer transition"
+                onClick={handleResetClick}
+              >
+                Clear filters
+              </button>
+            </div>
+          </div>
+          {/* Found Songs */}
           <div
             className={`${
               viewType === "grid"
