@@ -60,7 +60,7 @@ export default function Music({ songData }) {
         <Heading className="w-11/12 max-w-3xl mx-auto" text="Music" />
       </section>
       {/* Main Content */}
-      <section className="mt-8 md:mt-12 lg:mt-12 mx-auto bg-white py-4 pb-12 md:py-16 md:px-4">
+      <section className="mt-8 md:mt-12 lg:mt-12 mx-auto min-h-screen bg-white py-4 pb-12 md:py-16 md:px-4">
         <div
           className={`mx-auto border-theme-secondary rounded-md px-4 md:p-0 ${
             viewType === "grid"
@@ -112,7 +112,7 @@ export default function Music({ songData }) {
               <div className="w-full md:w-24 mx-auto self-end text-base md:text-sm">
                 <button
                   className={`w-full border shadow-sm rounded-md p-2 transition ${
-                    filtered
+                    !reset
                       ? "bg-theme-primary text-white border-gray-300 hover:bg-white hover:text-theme-primary active:bg-theme-primary active:text-white"
                       : "bg-gray-200 text-gray-500 border-gray-300 hover:bg-gray-100 active:bg-gray-200"
                   }`}

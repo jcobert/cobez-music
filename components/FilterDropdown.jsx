@@ -32,6 +32,8 @@ function FilterDropdown(props) {
           return song.data.artist === selected;
         });
       }
+      return props.filterSetGenre;
+      // return props.songSelection;
     }
     if (filterType === "genre") {
       if (selected !== "All") {
@@ -39,18 +41,40 @@ function FilterDropdown(props) {
           return song.data.genre === selected;
         });
       }
+      return props.filterSetArtist;
+      // return props.songSelection;
     }
   }
 
   const handleFilter = useCallback(() => {
     let filteredSelection = props.songSelection;
-    if (selected === "All") {
-      props.setFilteredState(false);
+
+    if (props.filter === "artist") {
+      if (props.filterSetGenre == props.songSelection) {
+        filteredSelection = props.filterSetArtist;
+      } else {
+        props.setFilterSetArtist(filterSongs(props.filter, selected));
+        filteredSelection = filterSongs(props.filter, selected);
+      }
+    }
+    if (props.filter === "genre") {
+      if (props.filterSetArtist == props.songSelection) {
+        filteredSelection = props.filterSetGenre;
+      } else {
+        props.setFilterSetGenre(filterSongs(props.filter, selected));
+        filteredSelection = filterSongs(props.filter, selected);
+      }
+    }
+
+    if (
+      props.filterSetArtist == props.songSelection &&
+      props.filterSetGenre == props.songSelection
+    ) {
+      props.setSelectionState(props.songSelection);
     } else {
-      filteredSelection = filterSongs(props.filter, selected);
+      props.setSelectionState(filteredSelection);
       props.setFilteredState(true);
     }
-    props.setSelectionState(filteredSelection);
   });
 
   const handleChange = useCallback((e) => {
