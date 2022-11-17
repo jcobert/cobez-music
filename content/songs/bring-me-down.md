@@ -12,6 +12,9 @@ links:
   spotify: "#"
   apple: "#"
   youtube: "#"
+credits:
+  - Songwriter
+  - Producer
 ---
 I﻿ wrote this song for a female singer, but had no particular artist in mind at the time. I knew it needed someone with range and emotion, which is when I thought of Steph. She was on board right away when I asked her if she wanted to be the artist for this track, and was a pleasure to work with.
 

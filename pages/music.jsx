@@ -26,19 +26,21 @@ export default function Music({ songData }) {
   const [filterSetGenre, setFilterSetGenre] = useState(songs);
 
   // Filter Arrays
-  let artists = [];
-  songs.map((song) => artists.push(song.data.artist));
-  artists.sort();
-  artists.unshift("All");
+  let artistList = [];
+  songs.map((song) => artistList.push(song.data.artist));
+  artistList.sort();
+  artistList.unshift("All");
+  const artists = [...new Set(artistList)];
 
-  let genres = [];
+  let genreList = [];
   songs.map((song) => {
     if (song.data.genre) {
-      genres.push(song.data.genre);
+      genreList.push(song.data.genre);
     }
   });
-  genres.sort();
-  genres.unshift("All");
+  genreList.sort();
+  genreList.unshift("All");
+  const genres = [...new Set(genreList)];
 
   function handleResetClick() {
     setFilterSetArtist(songs);
