@@ -15,73 +15,63 @@ function FilterDropdown(props) {
 
   const options = props.options;
 
+  // Trigger filtering on selection change
   useEffect(() => {
     handleFilter();
   }, [selected]);
 
+  // Set selected value to "All" on reset
   useEffect(() => {
     if (props.reset) {
       setSelected("All");
     }
   }, [props.reset]);
 
-  function filterSongs(filterType, selected) {
-    if (filterType === "artist") {
-      if (selected !== "All") {
-        return props.filterSetGenre.filter(function (song) {
-          return song.data.artist === selected;
-        });
-      }
-      return props.filterSetGenre;
-      // return props.songSelection;
-    }
-    if (filterType === "genre") {
-      if (selected !== "All") {
-        return props.filterSetArtist.filter(function (song) {
-          return song.data.genre === selected;
-        });
-      }
-      return props.filterSetArtist;
-      // return props.songSelection;
-    }
-  }
-
-  const handleFilter = useCallback(() => {
-    let filteredSelection = props.songSelection;
-
+  // Assign selected value to respective filter state
+  const handleChange = useCallback((e) => {
+    setSelected(e);
     if (props.filter === "artist") {
-      if (props.filterSetGenre == props.songSelection) {
-        filteredSelection = props.filterSetArtist;
-      } else {
-        props.setFilterSetArtist(filterSongs(props.filter, selected));
-        filteredSelection = filterSongs(props.filter, selected);
-      }
+      props.setChoiceArtist(e);
     }
     if (props.filter === "genre") {
-      if (props.filterSetArtist == props.songSelection) {
-        filteredSelection = props.filterSetGenre;
-      } else {
-        props.setFilterSetGenre(filterSongs(props.filter, selected));
-        filteredSelection = filterSongs(props.filter, selected);
-      }
+      props.setChoiceGenre(e);
     }
-
-    if (
-      props.filterSetArtist == props.songSelection &&
-      props.filterSetGenre == props.songSelection
-    ) {
-      props.setSelectionState(props.songSelection);
-    } else {
-      props.setSelectionState(filteredSelection);
-      props.setFilteredState(true);
+    if (props.reset && e !== "All") {
+      props.resetState(false);
     }
   });
 
-  const handleChange = useCallback((e) => {
-    if (props.reset) {
-      props.resetState(false);
+  // Handle the filtering logic and set resulting selection
+  const handleFilter = useCallback(() => {
+    let filteredSelection = props.allSongs;
+
+    if (props.choiceArtist === "All" && props.choiceGenre === "All") {
+      props.setSelectionState(props.allSongs);
+      props.resetState(true);
+      return;
+    } else if (props.choiceArtist !== "All" && props.choiceGenre === "All") {
+      filteredSelection = props.allSongs.filter(function (song) {
+        return song.data.artist === props.choiceArtist;
+      });
+    } else if (props.choiceArtist === "All" && props.choiceGenre !== "All") {
+      filteredSelection = props.allSongs.filter(function (song) {
+        return song.data.genre === props.choiceGenre;
+      });
+    } else {
+      filteredSelection = props.allSongs
+        .filter(function (song) {
+          return song.data.artist === props.choiceArtist;
+        })
+        .filter((song) =>
+          props.allSongs
+            .filter(function (song) {
+              return song.data.genre === props.choiceGenre;
+            })
+            .includes(song)
+        );
     }
-    setSelected(e);
+
+    props.setSelectionState(filteredSelection);
   });
 
   return (

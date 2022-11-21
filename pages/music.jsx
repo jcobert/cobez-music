@@ -19,13 +19,12 @@ export default function Music({ songData }) {
 
   // States
   const [viewType, setViewType] = useState("list");
-  const [filtered, setFiltered] = useState(false);
   const [reset, setReset] = useState(true);
   const [selection, setSelection] = useState(songs);
-  const [filterSetArtist, setFilterSetArtist] = useState(songs);
-  const [filterSetGenre, setFilterSetGenre] = useState(songs);
+  const [filterChoiceArtist, setFilterChoiceArtist] = useState("All");
+  const [filterChoiceGenre, setFilterChoiceGenre] = useState("All");
 
-  // Filter Arrays
+  // Filter Option Arrays
   let artistList = [];
   songs.map((song) => artistList.push(song.data.artist));
   artistList.sort();
@@ -43,9 +42,8 @@ export default function Music({ songData }) {
   const genres = [...new Set(genreList)];
 
   function handleResetClick() {
-    setFilterSetArtist(songs);
-    setFilterSetGenre(songs);
-    setFiltered(false);
+    setFilterChoiceArtist("All");
+    setFilterChoiceGenre("All");
     setSelection(songs);
     setReset(true);
   }
@@ -78,14 +76,13 @@ export default function Music({ songData }) {
               <div className="w-full flex-1">
                 <FilterDropdown
                   options={artists}
-                  filteredState={filtered}
-                  setFilteredState={setFiltered}
+                  choiceArtist={filterChoiceArtist}
+                  choiceGenre={filterChoiceGenre}
+                  setChoiceArtist={setFilterChoiceArtist}
+                  setChoiceGenre={setFilterChoiceGenre}
                   selectionState={selection}
                   setSelectionState={setSelection}
-                  filterSetArtist={filterSetArtist}
-                  setFilterSetArtist={setFilterSetArtist}
-                  filterSetGenre={filterSetGenre}
-                  songSelection={songs}
+                  allSongs={songs}
                   filter="artist"
                   title="Artist"
                   reset={reset}
@@ -96,14 +93,13 @@ export default function Music({ songData }) {
               <div className="w-full flex-1">
                 <FilterDropdown
                   options={genres}
-                  filteredState={filtered}
-                  setFilteredState={setFiltered}
+                  choiceArtist={filterChoiceArtist}
+                  choiceGenre={filterChoiceGenre}
+                  setChoiceArtist={setFilterChoiceArtist}
+                  setChoiceGenre={setFilterChoiceGenre}
                   selectionState={selection}
                   setSelectionState={setSelection}
-                  filterSetGenre={filterSetGenre}
-                  setFilterSetGenre={setFilterSetGenre}
-                  filterSetArtist={filterSetArtist}
-                  songSelection={songs}
+                  allSongs={songs}
                   filter="genre"
                   title="Genre"
                   reset={reset}
