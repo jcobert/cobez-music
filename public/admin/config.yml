@@ -24,6 +24,7 @@ collections:
           date_format: "MM/D/YYYY",
           time_format: false,
         }
+      - { label: "Genre", name: "genre", widget: "string" }
       - { label: "Artwork", name: "artwork", widget: "image" }
       - {
           label: "Featured on Homepage",

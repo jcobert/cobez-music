@@ -49,10 +49,10 @@ export default function Home({ songData }) {
             </div>
             <div className="w-fit mx-auto rounded-md shadow">
               {/* Body */}
-              <div className="mx-auto max-w-3xl bg-white border rounded p-4 md:p-8">
+              <div className="mx-auto max-w-3xl lg:max-w-5xl bg-white border rounded p-4 md:p-8">
                 <div className="flex flex-col gap-y-8">
                   {featuredSongs.map((item, i) => (
-                    <SongCard key={i} song={item} />
+                    <SongCard key={i} song={item} view="list" layout="compact" />
                   ))}
                 </div>
               </div>
@@ -60,7 +60,7 @@ export default function Home({ songData }) {
             {/* Music Page Link */}
             <div className="text-center mt-8 md:mt-12 py-2 md:pb-0">
               <Link href="/music">
-                <a className="inline-block rounded-md p-4 md:p-2 w-9/12 sm:max-w-[12rem] border border-theme-primary bg-white hover:bg-theme-primary text-theme-primary hover:text-white text-lg md:text-base font-bold transition">
+                <a className="inline-block rounded-md p-4 md:p-2 w-9/12 sm:max-w-[12rem] border bg-theme-primary hover:bg-theme-tertiary text-white hover:text-white text-lg md:text-base font-bold transition">
                   <div className="flex gap-x-2 justify-center items-center">
                     <span>All Music</span>
                     <FontAwesomeIcon
@@ -79,7 +79,7 @@ export default function Home({ songData }) {
             <div className="py-8"></div>
           </div>
         </section>
-        {/* Section 2 */}
+        {/* About Section */}
         <section className="bg-theme-primary">
           <div className="mt-20 md:mt-24 lg:mt-24 w-11/12 mx-auto pt-8 pb-12 md:pt-16 md:pb-20">
             {/* Header */}
@@ -112,7 +112,7 @@ export default function Home({ songData }) {
             <div className="py-8"></div>
           </div>
         </section>
-        {/* Section 3 */}
+        {/* Contact Section */}
         <section className="bg-theme-secondary">
           <div className="mt-20 md:mt-24 lg:mt-24 w-11/12 mx-auto pt-8 pb-12 md:pt-16 md:pb-20">
             {/* Header */}
