@@ -55,3 +55,11 @@ collections:
                 ["Songwriter", "Producer", "Recording Engineer", "Vocals"],
             },
         }
+  - label: "About"
+    name: "about"
+    folder: "/content/about"
+    create: true
+    slug: "about-content"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
