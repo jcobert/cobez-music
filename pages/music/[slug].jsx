@@ -99,7 +99,9 @@ function Music({ frontmatter, markdown }) {
                 if (i === song.credits.length - 1) {
                   delimiter = "";
                 }
-                return <span key={i}>{`${credit.toLowerCase()}${delimiter}`}</span>;
+                return (
+                  <span key={i}>{`${credit.toLowerCase()}${delimiter}`}</span>
+                );
               })}
             </div>
             <span className="block mx-auto w-10/12 border-b"></span>
