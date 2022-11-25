@@ -59,7 +59,7 @@ collections:
     name: "about"
     folder: "/content/about"
     create: true
-    slug: "about-content"
+    slug: "{{fields.title}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }

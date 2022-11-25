@@ -59,14 +59,10 @@ export default function Music({ songData }) {
       <section>
         <Heading className="w-11/12 max-w-3xl mx-auto" text="Music" />
       </section>
-      {/* Main Content */}
-      <section className="mt-8 md:mt-12 lg:mt-12 mx-auto min-h-screen bg-white py-4 pb-12 md:py-16 md:px-4">
+      {/* Body */}
+      <section className="wrapper-body bg-white">
         <div
-          className={`mx-auto border-theme-secondary rounded-md px-4 md:p-0 ${
-            viewType === "grid"
-              ? "max-w-3xl lg:max-w-5xl"
-              : "max-w-3xl lg:max-w-5xl"
-          }`}
+          className="container-body"
         >
           {/* Sort and Filter */}
           <div className="flex flex-col gap-y-4 mb-4">
