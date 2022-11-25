@@ -33,7 +33,7 @@ function Music({ frontmatter, markdown }) {
   const body = markdown;
 
   return (
-    <div className="bg-white/95 pt-4 md:pt-12 pb-16 md:pb-2 min-h-screen">
+    <div className="bg-white/95 pt-4 md:pt-12 pb-12 md:pb-8 min-h-screen">
       {/* Page Nav Link */}
       <div className="w-constrain py-4">
         <Link href="/music">
