@@ -7,8 +7,10 @@ import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import ContactForm from "../components/ContactForm";
+import { getAboutData } from "../lib/about";
+import ReactMarkdown from "react-markdown";
 
-export default function Home({ songData }) {
+export default function Home({ songData, background }) {
   const featuredSongs = [songData].flatMap((songs) => {
     const songJson = JSON.parse(songs);
     return songJson.filter(function (song) {
@@ -97,7 +99,13 @@ export default function Home({ songData }) {
             <div className="w-full max-w-3xl mx-auto rounded-md shadow">
               {/* Body */}
               <div className="mx-auto bg-white border rounded p-4 md:p-8">
-                <div className="flex flex-col gap-y-8"></div>
+                <div className="flex flex-col gap-y-8">
+                  <div className="rounded-md px-4 md:px-0 flex-1">
+                    <ReactMarkdown className="prose max-w-none">
+                      {background?.markdown}
+                    </ReactMarkdown>
+                  </div>
+                </div>
               </div>
             </div>
             {/* About Page Link */}
@@ -144,9 +152,13 @@ export default function Home({ songData }) {
 
 export async function getStaticProps() {
   const songData = getAllSongData();
+  const background = getAboutData("background");
+  const influences = getAboutData("influences");
   return {
     props: {
       songData,
+      background,
+      influences,
     },
   };
 }
