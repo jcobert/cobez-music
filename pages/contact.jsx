@@ -1,14 +1,8 @@
-import { useState } from "react";
 import Head from "next/head";
 import Heading from "../components/Heading";
 import ContactForm from "../components/ContactForm";
 
-export default function Contact() {
-  const [submitted, setSubmitted] = useState(false);
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
+export default function Contact() {  
 
   return (
     <div className="bg-theme-primary">

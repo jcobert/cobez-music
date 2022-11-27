@@ -1,6 +1,27 @@
+import { useState, useRef } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleCheck } from "@fortawesome/free-regular-svg-icons";
+
 export default function ContactForm(props) {
+  const [submitted, setSubmitted] = useState(false);
+  const firstName = useRef(null);
+  const lastName = useRef(null);
+  const email = useRef(null);
+  const message = useRef(null);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setSubmitted(true);
+    e.target.reset();
+  };
+
   return (
-    <form name="contact" method="post" data-netlify="true">
+    <form
+      onSubmit={handleSubmit}
+      name="contact"
+      method="post"
+      data-netlify="true"
+    >
       <input type="hidden" name="form-name" value="contact" />
       <div className="border rounded shadow-sm text-lg px-4 pt-8 pb-12 md:px-16 lg:px-48">
         {/* Body */}
@@ -16,6 +37,7 @@ export default function ContactForm(props) {
               First Name
             </label>
             <input
+              ref={firstName}
               type="text"
               name="first-name"
               id="first-name"
@@ -29,6 +51,7 @@ export default function ContactForm(props) {
               Last Name
             </label>
             <input
+              ref={lastName}
               type="text"
               name="last-name"
               id="last-name"
@@ -42,6 +65,7 @@ export default function ContactForm(props) {
               Email
             </label>
             <input
+              ref={email}
               type="email"
               name="email"
               id="email"
@@ -55,6 +79,7 @@ export default function ContactForm(props) {
               Message
             </label>
             <textarea
+              ref={message}
               name="message"
               id="message"
               required
@@ -66,14 +91,21 @@ export default function ContactForm(props) {
           <div className="col-span-2 w-full mt-8 md:mt-12">
             <button
               type="submit"
-              className="block rounded-md mx-auto p-4 md:p-3 w-9/12 sm:max-w-[12rem] border bg-theme-primary hover:bg-theme-tertiary text-white hover:text-white font-bold transition"
+              className={`block rounded-md mx-auto p-4 md:p-3 w-9/12 sm:max-w-[12rem] border bg-theme-primary hover:bg-theme-tertiary text-white hover:text-white font-bold transition ${
+                submitted ? "hidden" : ""
+              }`}
             >
               <span>Submit</span>
             </button>
             {/* Success Response */}
-            {/* <p className="text-center mx-auto p-4 md:p-3 w-full border border-transparent">
-              Your message was sent!
-            </p> */}
+            <div
+              className={`flex justify-center items-center gap-x-2 text-center mx-auto p-4 md:p-3 w-full text-theme-primary border border-transparent ${
+                !submitted ? "hidden" : ""
+              }`}
+            >
+              <FontAwesomeIcon icon={faCircleCheck} />
+              <span>Your message was sent!</span>
+            </div>
           </div>
         </div>
       </div>
