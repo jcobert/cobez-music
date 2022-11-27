@@ -10,10 +10,6 @@ export default function ContactForm(props) {
     email: "",
     message: "",
   });
-  const firstNameRef = useRef("");
-  const lastNameRef = useRef("");
-  const emailRef = useRef("");
-  const messageRef = useRef("");
 
   const handleInputChange = (e) => {
     setInputValues({
@@ -68,7 +64,6 @@ export default function ContactForm(props) {
               </label>
               <input
                 onChange={handleInputChange}
-                ref={firstNameRef}
                 type="text"
                 name="firstName"
                 id="first-name"
@@ -84,7 +79,6 @@ export default function ContactForm(props) {
               </label>
               <input
                 onChange={handleInputChange}
-                ref={lastNameRef}
                 type="text"
                 name="lastName"
                 id="last-name"
@@ -100,7 +94,6 @@ export default function ContactForm(props) {
               </label>
               <input
                 onChange={handleInputChange}
-                ref={emailRef}
                 type="email"
                 name="email"
                 id="email"
@@ -116,7 +109,6 @@ export default function ContactForm(props) {
               </label>
               <textarea
                 onChange={handleInputChange}
-                ref={messageRef}
                 name="message"
                 id="message"
                 value={inputValues.message}

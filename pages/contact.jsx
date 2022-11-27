@@ -26,7 +26,7 @@ export default function Contact() {
       <section className="wrapper-body bg-white">
         <div className="container-body">
           {/* Graphic */}
-          <div className="text-center text-6xl md:text-7xl text-theme-primary my-8 md:my-4">
+          <div className="text-center text-7xl md:text-8xl text-theme-primary my-8 md:my-2">
             <FontAwesomeIcon icon={faVolumeHigh} />
           </div>
           {/* CTA */}
@@ -36,7 +36,7 @@ export default function Contact() {
             <p className="mt-4">
               Feel free to reach out on Instagram or send me an email as well.
             </p>
-            <div className="text-theme-primary text-4xl md:text-3xl flex justify-center items-center gap-14 md:gap-8 pt-6">
+            <div className="text-theme-primary text-4xl md:text-3xl flex justify-center items-center gap-14 md:gap-8 py-6 pt-8">
               <a
                 class="hover:text-theme-tertiary transition-all"
                 href={links.instagram}
