@@ -1,8 +1,15 @@
 import Head from "next/head";
 import Heading from "../components/Heading";
 import ContactForm from "../components/ContactForm";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faVolumeHigh, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 
-export default function Contact() {  
+export default function Contact() {
+  const links = {
+    instagram: "https://www.instagram.com/jcobez",
+    email: "mailto:josh@cobezmusic.com",
+  };
 
   return (
     <div className="bg-theme-primary">
@@ -18,6 +25,32 @@ export default function Contact() {
       {/* Body */}
       <section className="wrapper-body bg-white">
         <div className="container-body">
+          {/* Graphic */}
+          <div className="text-center text-6xl md:text-7xl text-theme-primary my-8 md:my-4">
+            <FontAwesomeIcon icon={faVolumeHigh} />
+          </div>
+          {/* CTA */}
+          <div className="my-8 md:my-12 max-w-3xl mx-auto text-center">
+            <p>Looking to collaborate or have something to share?</p>
+            <p>Please leave a message below.</p>
+            <p className="mt-4">
+              Feel free to reach out on Instagram or send me an email as well.
+            </p>
+            <div className="text-theme-primary text-4xl md:text-3xl flex justify-center items-center gap-14 md:gap-8 pt-6">
+              <a
+                class="hover:text-theme-tertiary transition-all"
+                href={links.instagram}
+              >
+                <FontAwesomeIcon icon={faInstagram} />
+              </a>
+              <a
+                class="hover:text-theme-tertiary transition-all"
+                href={links.email}
+              >
+                <FontAwesomeIcon icon={faEnvelope} />
+              </a>
+            </div>
+          </div>
           {/* Form */}
           <div>
             <ContactForm />
