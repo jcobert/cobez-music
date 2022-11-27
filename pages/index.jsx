@@ -6,6 +6,7 @@ import Image from "next/future/image";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import ContactForm from "../components/ContactForm";
 
 export default function Home({ songData }) {
   const featuredSongs = [songData].flatMap((songs) => {
@@ -52,7 +53,12 @@ export default function Home({ songData }) {
               <div className="mx-auto max-w-3xl lg:max-w-5xl bg-white border rounded p-4 md:p-8">
                 <div className="flex flex-col gap-y-8">
                   {featuredSongs.map((item, i) => (
-                    <SongCard key={i} song={item} view="list" layout="compact" />
+                    <SongCard
+                      key={i}
+                      song={item}
+                      view="list"
+                      layout="compact"
+                    />
                   ))}
                 </div>
               </div>
@@ -121,10 +127,12 @@ export default function Home({ songData }) {
                 Contact Me
               </h1>
             </div>
-            <div className="w-full max-w-3xl mx-auto rounded-md shadow">
+            <div className="w-full max-w-3xl lg:max-w-5xl mx-auto rounded-md shadow">
               {/* Body */}
               <div className="mx-auto bg-white border rounded p-4 md:p-8">
-                <div className="flex flex-col gap-y-8"></div>
+                <div className="flex flex-col gap-y-8">
+                  <ContactForm />
+                </div>
               </div>
             </div>
           </div>
