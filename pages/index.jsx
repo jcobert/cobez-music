@@ -6,8 +6,11 @@ import Image from "next/future/image";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import ContactForm from "../components/ContactForm";
+import { getAboutData } from "../lib/about";
+import ReactMarkdown from "react-markdown";
 
-export default function Home({ songData }) {
+export default function Home({ songData, background }) {
   const featuredSongs = [songData].flatMap((songs) => {
     const songJson = JSON.parse(songs);
     return songJson.filter(function (song) {
@@ -52,7 +55,12 @@ export default function Home({ songData }) {
               <div className="mx-auto max-w-3xl lg:max-w-5xl bg-white border rounded p-4 md:p-8">
                 <div className="flex flex-col gap-y-8">
                   {featuredSongs.map((item, i) => (
-                    <SongCard key={i} song={item} view="list" layout="compact" />
+                    <SongCard
+                      key={i}
+                      song={item}
+                      view="list"
+                      layout="compact"
+                    />
                   ))}
                 </div>
               </div>
@@ -91,7 +99,13 @@ export default function Home({ songData }) {
             <div className="w-full max-w-3xl mx-auto rounded-md shadow">
               {/* Body */}
               <div className="mx-auto bg-white border rounded p-4 md:p-8">
-                <div className="flex flex-col gap-y-8"></div>
+                <div className="flex flex-col gap-y-8">
+                  <div className="rounded-md px-4 md:px-0 flex-1">
+                    <ReactMarkdown className="prose max-w-none">
+                      {background?.markdown}
+                    </ReactMarkdown>
+                  </div>
+                </div>
               </div>
             </div>
             {/* About Page Link */}
@@ -113,7 +127,7 @@ export default function Home({ songData }) {
           </div>
         </section>
         {/* Contact Section */}
-        <section className="bg-theme-secondary">
+        <section className="bg-theme-tertiary">
           <div className="mt-20 md:mt-24 lg:mt-24 w-11/12 mx-auto pt-8 pb-12 md:pt-16 md:pb-20">
             {/* Header */}
             <div className="h-16 mx-auto max-w-3xl flex items-center justify-center md:justify-start md:pl-4 border-l-4 border-white border-b-4 rounded-bl-md mb-4 md:mb-12">
@@ -121,10 +135,12 @@ export default function Home({ songData }) {
                 Contact Me
               </h1>
             </div>
-            <div className="w-full max-w-3xl mx-auto rounded-md shadow">
+            <div className="w-full max-w-3xl lg:max-w-3xl mx-auto rounded-md shadow">
               {/* Body */}
-              <div className="mx-auto bg-white border rounded p-4 md:p-8">
-                <div className="flex flex-col gap-y-8"></div>
+              <div className="mx-auto bg-theme-secondary border rounded">
+                <div className="flex flex-col gap-y-8">
+                  <ContactForm />
+                </div>
               </div>
             </div>
           </div>
@@ -136,9 +152,13 @@ export default function Home({ songData }) {
 
 export async function getStaticProps() {
   const songData = getAllSongData();
+  const background = getAboutData("background");
+  const influences = getAboutData("influences");
   return {
     props: {
       songData,
+      background,
+      influences,
     },
   };
 }
