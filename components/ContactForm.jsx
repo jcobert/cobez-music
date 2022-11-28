@@ -49,9 +49,9 @@ export default function ContactForm(props) {
   return (
     <div>
       <form onSubmit={handleSubmit} name="contact" data-netlify="true">        
-        <div className="border rounded shadow-sm text-lg px-4 pt-8 pb-12 md:px-16 lg:px-48">
+        <div className="border bg-white rounded shadow-sm text-lg px-4 pt-8 pb-12 md:px-16">
           {/* Body */}
-          <div className="grid grid-cols-2 gap-6">
+          <div className="grid grid-cols-2 gap-6 max-w-2xl mx-auto">
             <div className="col-span-2 mb-4 md:mb-8">
               <h3 className="text-center text-3xl md:text-4xl font-bold text-theme-primary">
                 Send me a message!

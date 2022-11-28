@@ -127,7 +127,7 @@ export default function Home({ songData, background }) {
           </div>
         </section>
         {/* Contact Section */}
-        <section className="bg-theme-secondary">
+        <section className="bg-theme-tertiary">
           <div className="mt-20 md:mt-24 lg:mt-24 w-11/12 mx-auto pt-8 pb-12 md:pt-16 md:pb-20">
             {/* Header */}
             <div className="h-16 mx-auto max-w-3xl flex items-center justify-center md:justify-start md:pl-4 border-l-4 border-white border-b-4 rounded-bl-md mb-4 md:mb-12">
@@ -135,9 +135,9 @@ export default function Home({ songData, background }) {
                 Contact Me
               </h1>
             </div>
-            <div className="w-full max-w-3xl lg:max-w-5xl mx-auto rounded-md shadow">
+            <div className="w-full max-w-3xl lg:max-w-3xl mx-auto rounded-md shadow">
               {/* Body */}
-              <div className="mx-auto bg-white border rounded p-4 md:p-8">
+              <div className="mx-auto bg-theme-secondary border rounded">
                 <div className="flex flex-col gap-y-8">
                   <ContactForm />
                 </div>
