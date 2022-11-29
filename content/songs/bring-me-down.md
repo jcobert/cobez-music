@@ -9,9 +9,9 @@ featured: true
 description: A pop tune performed by the talented Steph Taibi. Written and
   produced by Cobez.
 links:
-  spotify: "#"
-  apple: "#"
-  youtube: "#"
+  spotify: https://open.spotify.com/track/6Sf5d2bLxWrX6j4TN8cDkV?si=f935d3807c7b4269
+  apple: https://music.apple.com/ng/album/bring-me-down/1545743183?i=1545743184
+  youtube: https://www.youtube.com/watch?v=eQUvJniRyk0
 credits:
   - Songwriter
   - Producer
