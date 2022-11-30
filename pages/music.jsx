@@ -17,6 +17,9 @@ export default function Music({ songData }) {
     return songJson;
   });
 
+  // Sort songs by date by default
+  sortSongs("date", "desc");
+
   // States
   const [viewType, setViewType] = useState("list");
   const [reset, setReset] = useState(true);
@@ -24,7 +27,7 @@ export default function Music({ songData }) {
   const [filterChoiceArtist, setFilterChoiceArtist] = useState("All");
   const [filterChoiceGenre, setFilterChoiceGenre] = useState("All");
 
-  // Filter Option Arrays
+  // Define Filter Options
   let artistList = [];
   songs.map((song) => artistList.push(song.data.artist));
   artistList.sort();
@@ -48,6 +51,32 @@ export default function Music({ songData }) {
     setReset(true);
   }
 
+  function sortSongs(property, direction = "asc") {
+    songs.sort((a, b) => {
+      let valA = a.data[property];
+      let valB = b.data[property];
+      if (property === "date") {
+        valA = new Date(a.data.date);
+        valB = new Date(b.data.date);
+      }
+      if (valA < valB) {
+        if (direction === "asc") {
+          return -1;
+        }
+        return 1;
+      }
+      if (valA > valB) {
+        if (direction === "asc") {
+          return 1;
+        }
+        return -1;
+      }
+      return 0;
+    });
+  }
+
+  function handleSortClick() {}
+
   return (
     <div className="bg-theme-primary">
       <Head>
@@ -61,9 +90,7 @@ export default function Music({ songData }) {
       </section>
       {/* Body */}
       <section className="wrapper-body bg-white">
-        <div
-          className="container-body"
-        >
+        <div className="container-body">
           {/* Sort and Filter */}
           <div className="flex flex-col gap-y-4 mb-4">
             {/* Filter Dropdowns */}
@@ -118,6 +145,23 @@ export default function Music({ songData }) {
                   </span>
                 </button>
               </div>
+            </div>
+            {/* Sort Options */}
+            <div className="p-4 pt-3 border rounded-md flex md:flex-row items-center justify-evenly gap-x-2 gap-y-2">
+              <button
+                name="btnSortDate"
+                onClick={handleSortClick}
+                className="border p-2 rounded"
+              >
+                Date
+              </button>
+              <button
+                name="btnSortTitle"
+                onClick={handleSortClick}
+                className="border p-2 rounded"
+              >
+                Title
+              </button>
             </div>
             {/* View Type Selector */}
             <div className="hidden md:flex justify-end">
