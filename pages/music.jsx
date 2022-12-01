@@ -17,15 +17,17 @@ export default function Music({ songData }) {
     return songJson;
   });
 
-  // Sort songs by date by default
-  sortSongs("date", "desc");
-
   // States
   const [viewType, setViewType] = useState("list");
   const [reset, setReset] = useState(true);
   const [selection, setSelection] = useState(songs);
   const [filterChoiceArtist, setFilterChoiceArtist] = useState("All");
   const [filterChoiceGenre, setFilterChoiceGenre] = useState("All");
+  const [sortBy, setSortBy] = useState("date");
+  const [sortAscending, setSortAscending] = useState(false);
+
+  // Sort songs using initial sort states (by date, descending)
+  sortSongs(sortBy, sortAscending);
 
   // Define Filter Options
   let artistList = [];
@@ -44,15 +46,9 @@ export default function Music({ songData }) {
   genreList.unshift("All");
   const genres = [...new Set(genreList)];
 
-  function handleResetClick() {
-    setFilterChoiceArtist("All");
-    setFilterChoiceGenre("All");
-    setSelection(songs);
-    setReset(true);
-  }
-
-  function sortSongs(property, direction = "asc") {
-    songs.sort((a, b) => {
+  // Song sorting function
+  function sortSongs(property, ascending = true) {
+    let output = selection.sort((a, b) => {
       let valA = a.data[property];
       let valB = b.data[property];
       if (property === "date") {
@@ -60,22 +56,44 @@ export default function Music({ songData }) {
         valB = new Date(b.data.date);
       }
       if (valA < valB) {
-        if (direction === "asc") {
+        if (ascending) {
           return -1;
         }
         return 1;
       }
       if (valA > valB) {
-        if (direction === "asc") {
+        if (ascending) {
           return 1;
         }
         return -1;
       }
       return 0;
     });
+    return output;
   }
 
-  function handleSortClick() {}
+  // Reset button handler
+  function handleResetClick() {
+    setFilterChoiceArtist("All");
+    setFilterChoiceGenre("All");
+    setSelection(songs);
+    setSortBy("date");
+    setSortAscending(false);
+    setReset(true);
+  }
+
+  // Sort button handler
+  function handleSortClick(e) {
+    const sortType = e.target.getAttribute("data-sortType");
+    setSortBy(sortType);
+    setSortAscending(() => {
+      if (sortBy !== sortType) {
+        return true;
+      }
+      return !sortAscending;
+    });
+    setSelection(sortSongs(sortBy, sortAscending));
+  }
 
   return (
     <div className="bg-theme-primary">
@@ -149,14 +167,14 @@ export default function Music({ songData }) {
             {/* Sort Options */}
             <div className="p-4 pt-3 border rounded-md flex md:flex-row items-center justify-evenly gap-x-2 gap-y-2">
               <button
-                name="btnSortDate"
+                data-sortType="date"
                 onClick={handleSortClick}
                 className="border p-2 rounded"
               >
                 Date
               </button>
               <button
-                name="btnSortTitle"
+                data-sortType="title"
                 onClick={handleSortClick}
                 className="border p-2 rounded"
               >
