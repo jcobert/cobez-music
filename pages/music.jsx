@@ -88,6 +88,9 @@ export default function Music({ songData }) {
     setSortBy(sortType);
     setSortAscending(() => {
       if (sortBy !== sortType) {
+        if (sortType === "date") {
+          return false;
+        }
         return true;
       }
       return !sortAscending;
