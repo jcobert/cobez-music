@@ -10,6 +10,8 @@ import {
   faArrowsRotate,
   faArrowUpAZ,
   faArrowDownZA,
+  faArrowUp19,
+  faArrowDown91,
 } from "@fortawesome/free-solid-svg-icons";
 import FilterDropdown from "../components/FilterDropdown";
 
@@ -107,13 +109,35 @@ export default function Music({ songData }) {
     setSelection(sortSongs(sortBy, sortAscending));
   }
 
-  // const SortIcon = () => {
-  //   let icon = null;
-  //   const buttons = document.getElementById("sort").children;
+  // Sort Button Icon
+  const SortIcon = (props) => {
+    let icon = null;
+    let icons = [];
+    let visibility = "";
+    const style = props.className;
 
-  //   icon = faArrowDownZA;
-  //   return <FontAwesomeIcon icon={icon} />;
-  // };
+    if (props?.type === "numeric") {
+      icons = [faArrowUp19, faArrowDown91];
+    } else {
+      icons = [faArrowUpAZ, faArrowDownZA];
+    }
+
+    if (sortAscending) {
+      icon = icons[0];
+    } else {
+      icon = icons[1];
+    }
+
+    if (props.sortBy !== sortBy) {
+      visibility = "hidden";
+    }
+
+    return (
+      <div className={`${visibility} ${style}`}>
+        <FontAwesomeIcon icon={icon} />
+      </div>
+    );
+  };
 
   return (
     <div className="bg-theme-primary">
@@ -185,24 +209,22 @@ export default function Music({ songData }) {
               </div>
             </div>
             {/* Sort Options */}
-            <div
-              id="sort"
-              className="p-4 pt-3 border rounded-md flex md:flex-row items-center justify-evenly gap-x-2 gap-y-2"
-            >
+            <div className="p-4 pt-3 rounded-md flex md:flex-row items-center justify-evenly gap-x-2 gap-y-2">
               <button
                 data-sortType="date"
                 onClick={handleSortClick}
-                className="border p-2 rounded"
+                className="border p-2 rounded flex-1 flex justify-center gap-x-2"
               >
                 <span>Date</span>
-                {/* <SortIcon /> */}
+                <SortIcon sortBy="date" type="numeric" className={``} />
               </button>
               <button
                 data-sortType="title"
                 onClick={handleSortClick}
-                className="border p-2 rounded"
+                className="border p-2 rounded flex-1 flex justify-center gap-x-2"
               >
-                Title
+                <span>Title</span>
+                <SortIcon sortBy="title" className={``} />
               </button>
             </div>
             {/* View Type Selector */}
