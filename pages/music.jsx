@@ -76,7 +76,7 @@ export default function Music({ songData }) {
     return output;
   }
 
-  // Reset button handler
+  // Filter reset button handler
   function handleResetClick() {
     setFilterChoiceArtist("All");
     setFilterChoiceGenre("All");
@@ -154,9 +154,9 @@ export default function Music({ songData }) {
       <section className="wrapper-body bg-white">
         <div className="container-body">
           {/* Sort and Filter */}
-          <div className="flex flex-col gap-y-4 mb-4">
+          <div className="flex flex-col gap-y-4 border rounded-md">
             {/* Filter Dropdowns */}
-            <div className="p-4 pt-3 border rounded-md flex flex-col md:flex-row items-center justify-evenly gap-x-2 gap-y-2">
+            <div className="p-4 pt-3 flex flex-col md:flex-row items-center justify-evenly gap-x-2 gap-y-2">
               {/* Artist */}
               <div className="w-full flex-1">
                 <FilterDropdown
@@ -209,11 +209,13 @@ export default function Music({ songData }) {
               </div>
             </div>
             {/* Sort Options */}
-            <div className="p-4 pt-3 rounded-md flex md:flex-row items-center justify-evenly gap-x-2 gap-y-2">
+            <div className="p-4 pt-3 rounded-md flex md:flex-row items-center justify-evenly gap-x-2 gap-y-2 lg:justify-end">
               <button
                 data-sortType="date"
                 onClick={handleSortClick}
-                className="border p-2 rounded flex-1 flex justify-center gap-x-2"
+                className={`border p-2 rounded flex-1 flex justify-center gap-x-2 lg:flex-none lg:w-32 ${
+                  sortBy === "date" ? "text-theme-primary border-theme-primary" : ""
+                }`}
               >
                 <span>Date</span>
                 <SortIcon sortBy="date" type="numeric" className={``} />
@@ -221,32 +223,34 @@ export default function Music({ songData }) {
               <button
                 data-sortType="title"
                 onClick={handleSortClick}
-                className="border p-2 rounded flex-1 flex justify-center gap-x-2"
+                className={`border p-2 rounded flex-1 flex justify-center gap-x-2 lg:flex-none lg:w-32 ${
+                  sortBy === "title" ? "text-theme-primary border-theme-primary" : ""
+                }`}
               >
                 <span>Title</span>
                 <SortIcon sortBy="title" className={``} />
               </button>
             </div>
-            {/* View Type Selector */}
-            <div className="hidden md:flex justify-end">
-              <div className="flex justify-center items-center text-2xl text-theme-tertiary gap-x-4">
-                <button
-                  className={`${
-                    viewType === "list" ? "outline text-theme-primary" : ""
-                  } p-1 rounded flex outline-gray-300`}
-                  onClick={() => setViewType("list")}
-                >
-                  <FontAwesomeIcon icon={faList} />
-                </button>
-                <button
-                  className={`${
-                    viewType === "grid" ? "outline text-theme-primary" : ""
-                  } p-1 rounded flex outline-gray-300`}
-                  onClick={() => setViewType("grid")}
-                >
-                  <FontAwesomeIcon icon={faGrip} />
-                </button>
-              </div>
+          </div>
+          {/* View Type Selector */}
+          <div className="hidden md:flex justify-end py-4">
+            <div className="flex justify-center items-center text-2xl text-theme-tertiary gap-x-4">
+              <button
+                className={`${
+                  viewType === "list" ? "outline text-theme-primary" : ""
+                } p-1 rounded flex outline-gray-300`}
+                onClick={() => setViewType("list")}
+              >
+                <FontAwesomeIcon icon={faList} />
+              </button>
+              <button
+                className={`${
+                  viewType === "grid" ? "outline text-theme-primary" : ""
+                } p-1 rounded flex outline-gray-300`}
+                onClick={() => setViewType("grid")}
+              >
+                <FontAwesomeIcon icon={faGrip} />
+              </button>
             </div>
           </div>
           {/* No Results Message */}
