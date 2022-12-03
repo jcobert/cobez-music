@@ -8,6 +8,8 @@ import {
   faList,
   faGrip,
   faArrowsRotate,
+  faArrowUpAZ,
+  faArrowDownZA,
 } from "@fortawesome/free-solid-svg-icons";
 import FilterDropdown from "../components/FilterDropdown";
 
@@ -84,7 +86,14 @@ export default function Music({ songData }) {
 
   // Sort button handler
   function handleSortClick(e) {
-    const sortType = e.target.getAttribute("data-sortType");
+    const source = e.target;
+    let sortType = "";
+    if (!source.getAttribute("data-sortType")) {
+      // if button's children are clicked
+      sortType = source.closest("button").getAttribute("data-sortType");
+    } else {
+      sortType = source.getAttribute("data-sortType");
+    }
     setSortBy(sortType);
     setSortAscending(() => {
       if (sortBy !== sortType) {
@@ -97,6 +106,14 @@ export default function Music({ songData }) {
     });
     setSelection(sortSongs(sortBy, sortAscending));
   }
+
+  // const SortIcon = () => {
+  //   let icon = null;
+  //   const buttons = document.getElementById("sort").children;
+
+  //   icon = faArrowDownZA;
+  //   return <FontAwesomeIcon icon={icon} />;
+  // };
 
   return (
     <div className="bg-theme-primary">
@@ -168,13 +185,17 @@ export default function Music({ songData }) {
               </div>
             </div>
             {/* Sort Options */}
-            <div className="p-4 pt-3 border rounded-md flex md:flex-row items-center justify-evenly gap-x-2 gap-y-2">
+            <div
+              id="sort"
+              className="p-4 pt-3 border rounded-md flex md:flex-row items-center justify-evenly gap-x-2 gap-y-2"
+            >
               <button
                 data-sortType="date"
                 onClick={handleSortClick}
                 className="border p-2 rounded"
               >
-                Date
+                <span>Date</span>
+                {/* <SortIcon /> */}
               </button>
               <button
                 data-sortType="title"
