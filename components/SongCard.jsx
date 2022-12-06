@@ -30,7 +30,7 @@ function SongCard(props) {
             ></div>
           </div>
           {/* Body */}
-          <div className="flex flex-col items-center gap-y-4 md:gap-y-2 md:pl-5 mt-3 md:mt-0 md:py-4 md:flex-1 lg:pr-2">
+          <div className="flex flex-col w-full items-center gap-y-4 md:gap-y-2 md:pl-5 mt-3 md:mt-0 md:py-4 md:flex-1 lg:pr-2">
             {/* Title */}
             <div className="flex flex-col items-center md:items-start md:self-start text-center md:text-left lg:w-full lg:pr-6">
               <h4 className="text-lg font-bold">{song.data.title}</h4>

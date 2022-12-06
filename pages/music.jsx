@@ -8,6 +8,10 @@ import {
   faList,
   faGrip,
   faArrowsRotate,
+  faArrowUpAZ,
+  faArrowDownZA,
+  faArrowUp19,
+  faArrowDown91,
 } from "@fortawesome/free-solid-svg-icons";
 import FilterDropdown from "../components/FilterDropdown";
 
@@ -23,8 +27,13 @@ export default function Music({ songData }) {
   const [selection, setSelection] = useState(songs);
   const [filterChoiceArtist, setFilterChoiceArtist] = useState("All");
   const [filterChoiceGenre, setFilterChoiceGenre] = useState("All");
+  const [sortBy, setSortBy] = useState("date");
+  const [sortAscending, setSortAscending] = useState(false);
 
-  // Filter Option Arrays
+  // Sort songs using initial sort states (by date, descending)
+  sortSongs(sortBy, sortAscending);
+
+  // Define Filter Options
   let artistList = [];
   songs.map((song) => artistList.push(song.data.artist));
   artistList.sort();
@@ -41,12 +50,94 @@ export default function Music({ songData }) {
   genreList.unshift("All");
   const genres = [...new Set(genreList)];
 
+  // Song sorting function
+  function sortSongs(property, ascending = true) {
+    let output = selection.sort((a, b) => {
+      let valA = a.data[property];
+      let valB = b.data[property];
+      if (property === "date") {
+        valA = new Date(a.data.date);
+        valB = new Date(b.data.date);
+      }
+      if (valA < valB) {
+        if (ascending) {
+          return -1;
+        }
+        return 1;
+      }
+      if (valA > valB) {
+        if (ascending) {
+          return 1;
+        }
+        return -1;
+      }
+      return 0;
+    });
+    return output;
+  }
+
+  // Filter reset button handler
   function handleResetClick() {
     setFilterChoiceArtist("All");
     setFilterChoiceGenre("All");
     setSelection(songs);
+    setSortBy("date");
+    setSortAscending(false);
     setReset(true);
   }
+
+  // Sort button handler
+  function handleSortClick(e) {
+    const source = e.target;
+    let sortType = "";
+    if (!source.getAttribute("data-sortType")) {
+      // if button's children are clicked
+      sortType = source.closest("button").getAttribute("data-sortType");
+    } else {
+      sortType = source.getAttribute("data-sortType");
+    }
+    setSortBy(sortType);
+    setSortAscending(() => {
+      if (sortBy !== sortType) {
+        if (sortType === "date") {
+          return false;
+        }
+        return true;
+      }
+      return !sortAscending;
+    });
+    setSelection(sortSongs(sortBy, sortAscending));
+  }
+
+  // Sort Button Icon
+  const SortIcon = (props) => {
+    let icon = null;
+    let icons = [];
+    let visibility = "";
+    const style = props.className;
+
+    if (props?.type === "numeric") {
+      icons = [faArrowUp19, faArrowDown91];
+    } else {
+      icons = [faArrowUpAZ, faArrowDownZA];
+    }
+
+    if (sortAscending) {
+      icon = icons[0];
+    } else {
+      icon = icons[1];
+    }
+
+    if (props.sortBy !== sortBy) {
+      visibility = "hidden";
+    }
+
+    return (
+      <div className={`${visibility} ${style}`}>
+        <FontAwesomeIcon icon={icon} />
+      </div>
+    );
+  };
 
   return (
     <div className="bg-theme-primary">
@@ -61,13 +152,11 @@ export default function Music({ songData }) {
       </section>
       {/* Body */}
       <section className="wrapper-body bg-white">
-        <div
-          className="container-body"
-        >
+        <div className="container-body">
           {/* Sort and Filter */}
-          <div className="flex flex-col gap-y-4 mb-4">
+          <div className="flex flex-col gap-y-4 border rounded-md">
             {/* Filter Dropdowns */}
-            <div className="p-4 pt-3 border rounded-md flex flex-col md:flex-row items-center justify-evenly gap-x-2 gap-y-2">
+            <div className="p-4 pt-3 flex flex-col md:flex-row items-center justify-evenly gap-x-2 gap-y-2">
               {/* Artist */}
               <div className="w-full flex-1">
                 <FilterDropdown
@@ -119,26 +208,49 @@ export default function Music({ songData }) {
                 </button>
               </div>
             </div>
-            {/* View Type Selector */}
-            <div className="hidden md:flex justify-end">
-              <div className="flex justify-center items-center text-2xl text-theme-tertiary gap-x-4">
-                <button
-                  className={`${
-                    viewType === "list" ? "outline text-theme-primary" : ""
-                  } p-1 rounded flex outline-gray-300`}
-                  onClick={() => setViewType("list")}
-                >
-                  <FontAwesomeIcon icon={faList} />
-                </button>
-                <button
-                  className={`${
-                    viewType === "grid" ? "outline text-theme-primary" : ""
-                  } p-1 rounded flex outline-gray-300`}
-                  onClick={() => setViewType("grid")}
-                >
-                  <FontAwesomeIcon icon={faGrip} />
-                </button>
-              </div>
+            {/* Sort Options */}
+            <div className="p-4 pt-3 rounded-md flex md:flex-row items-center justify-evenly gap-x-2 gap-y-2 lg:justify-end">
+              <button
+                data-sortType="date"
+                onClick={handleSortClick}
+                className={`border p-2 rounded flex-1 flex justify-center gap-x-2 lg:flex-none lg:w-32 ${
+                  sortBy === "date" ? "text-theme-primary border-theme-primary" : ""
+                }`}
+              >
+                <span>Date</span>
+                <SortIcon sortBy="date" type="numeric" className={``} />
+              </button>
+              <button
+                data-sortType="title"
+                onClick={handleSortClick}
+                className={`border p-2 rounded flex-1 flex justify-center gap-x-2 lg:flex-none lg:w-32 ${
+                  sortBy === "title" ? "text-theme-primary border-theme-primary" : ""
+                }`}
+              >
+                <span>Title</span>
+                <SortIcon sortBy="title" className={``} />
+              </button>
+            </div>
+          </div>
+          {/* View Type Selector */}
+          <div className="hidden md:flex justify-end py-4">
+            <div className="flex justify-center items-center text-2xl text-theme-tertiary gap-x-4">
+              <button
+                className={`${
+                  viewType === "list" ? "outline text-theme-primary" : ""
+                } p-1 rounded flex outline-gray-300`}
+                onClick={() => setViewType("list")}
+              >
+                <FontAwesomeIcon icon={faList} />
+              </button>
+              <button
+                className={`${
+                  viewType === "grid" ? "outline text-theme-primary" : ""
+                } p-1 rounded flex outline-gray-300`}
+                onClick={() => setViewType("grid")}
+              >
+                <FontAwesomeIcon icon={faGrip} />
+              </button>
             </div>
           </div>
           {/* No Results Message */}
