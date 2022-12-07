@@ -15,6 +15,6 @@ links:
 credits:
   - Vocals
 ---
-When Bliss Ü reached out to me, asking if I'd like to sing on a cover of Shotgun he was working on, I immediately said yes. Bliss Ü has been churning out club bangers and feel good dance tracks from the heart of South Africa for several years and I couldn't pass on the opportunity to collaborate. Shortly after release, this track climbed the charts in South Africa and has been received positively around the world.
+When Bliss Ü reached out to me, asking if I'd like to sing on a cover of Shotgun he was working on, I immediately said yes. Bliss Ü has been churning out club bangers and feel-good dance tracks from the heart of South Africa for several years and I couldn't pass on the opportunity to collaborate. Shortly after release, this track climbed the charts in South Africa and has been received with great acclaim around the world.
 
 I knew early on in the process of working on this song that Bliss has serious chops and we were on the same wavelength. This is the first of many collaborations to come and I'm excited for what the future will bring.
