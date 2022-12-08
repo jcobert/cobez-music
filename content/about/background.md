@@ -3,4 +3,8 @@ title: Background
 ---
 #### B﻿ackground
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ultricies purus tellus, quis placerat purus fringilla et. Suspendisse maximus dui quis nibh pellentesque, eu varius velit efficitur. Nulla lacinia bibendum nunc sit amet aliquet. Nullam dolor odio, commodo vel sollicitudin gravida, tristique ut nisi. Proin commodo, massa quis egestas hendrerit, massa turpis blandit dolor, quis bibendum mauris ipsum a tortor. Integer luctus, felis ac bibendum porta, massa nisl malesuada augue, nec auctor metus mauris id purus. Vivamus eget sem sagittis, aliquet urna ac, porttitor massa. Fusce elementum volutpat ex et ultricies. Cras cursus enim ut dapibus accumsan.
+I grew up in New York on a hearty serving of classic rock and was exposed to music early on. I've been greatly influenced and inspired by my father who is an acclaimed musician, producer, and engineer (with several Grammy nominations, if I may toot his horn).  
+
+Through watching him, I learned the ropes of production and songwriting, and have continued to carve a path for myself as a musician. From pop and country to film and game scores, I see no bounds when it comes to writing music. 
+
+ I try to create music that people will love and that transcends any preference in genre. I want my passion for music to carry over to those who listen and hope that someday I can be an influence to others.
