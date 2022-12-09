@@ -42,7 +42,7 @@ export default function Home({ songData, background }) {
           </h4>
         </div>
         {/* Featured Music Section */}
-        <section className="bg-gray-100">
+        <section className="bg-gray-100/95">
           <div className="mt-20 md:mt-24 lg:mt-24 w-11/12 mx-auto pt-8 pb-12 md:pt-16 md:pb-20">
             {/* Header */}
             <div className="h-16 mx-auto max-w-3xl flex items-center justify-center md:justify-start md:pl-4 border-l-4 border-theme-primary border-b-4 rounded-bl-md mb-4 md:mb-12">
@@ -88,7 +88,7 @@ export default function Home({ songData, background }) {
           </div>
         </section>
         {/* About Section */}
-        <section className="bg-theme-primary">
+        <section className="bg-theme-primary/95">
           <div className="mt-20 md:mt-24 lg:mt-24 w-11/12 mx-auto pt-8 pb-12 md:pt-16 md:pb-20">
             {/* Header */}
             <div className="h-16 mx-auto max-w-3xl flex items-center justify-center md:justify-start md:pl-4 border-l-4 border-white border-b-4 rounded-bl-md mb-4 md:mb-12">
@@ -127,7 +127,7 @@ export default function Home({ songData, background }) {
           </div>
         </section>
         {/* Contact Section */}
-        <section className="bg-theme-tertiary">
+        <section className="bg-theme-tertiary/95">
           <div className="mt-20 md:mt-24 lg:mt-24 w-11/12 mx-auto pt-8 pb-12 md:pt-16 md:pb-20">
             {/* Header */}
             <div className="h-16 mx-auto max-w-3xl flex items-center justify-center md:justify-start md:pl-4 border-l-4 border-white border-b-4 rounded-bl-md mb-4 md:mb-12">
