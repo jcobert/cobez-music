@@ -111,7 +111,7 @@ export default function Home({ songData, background }) {
             {/* About Page Link */}
             <div className="text-center mt-8 md:mt-12 py-2 md:pb-0">
               <Link href="/about">
-                <a className="inline-block rounded-md p-4 md:p-2 w-9/12 sm:max-w-[12rem] border border-theme-primary bg-white hover:bg-theme-primary text-theme-primary hover:text-white text-lg md:text-base font-bold transition">
+                <a className="inline-block rounded-md p-4 md:p-2 w-9/12 sm:max-w-[12rem] border border-theme-primary bg-white hover:bg-theme-tertiary text-theme-primary hover:text-white text-lg md:text-base font-bold transition">
                   <div className="flex gap-x-2 justify-center items-center">
                     <span>Learn More...</span>
                   </div>
