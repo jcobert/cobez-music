@@ -3,8 +3,11 @@ import Heading from "../components/Heading";
 import { getAboutData } from "../lib/about";
 import ReactMarkdown from "react-markdown";
 import Image from "next/future/image";
+import Link from "next/link";
 import artistPhotoPark from "../public/images/artist-photo-cobez-park-2.jpg";
 import artistPhotoLift from "../public/images/artist-photo-cobez-lift.jpg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 export async function getStaticProps({ params }) {
   const background = getAboutData("background");
@@ -65,6 +68,22 @@ export default function About({ background, influences }) {
                 <ReactMarkdown className="prose max-w-none">
                   {influences.markdown}
                 </ReactMarkdown>
+              </div>
+            </div>
+            {/* CTA - Music Page Link */}
+            <div className="px-4 md:px-0 flex-1">
+              <div className="text-center py-2 md:pb-0">
+                <Link href="/music">
+                  <a className="inline-block rounded-md p-4 md:p-2 w-9/12 sm:max-w-[12rem] border bg-theme-primary hover:bg-theme-tertiary text-white hover:text-white text-lg md:text-base font-bold transition">
+                    <div className="flex gap-x-2 justify-center items-center">
+                      <span>Listen</span>
+                      <FontAwesomeIcon
+                        className="animate-pulse"
+                        icon={faArrowRight}
+                      />
+                    </div>
+                  </a>
+                </Link>
               </div>
             </div>
           </div>
