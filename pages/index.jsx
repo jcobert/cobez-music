@@ -19,7 +19,7 @@ export default function Home({ songData, background }) {
   });
 
   return (
-    <div className="mt-8">
+    <div>
       <Head>
         <title>Cobez Music</title>
         <meta name="description" content="Official website of Cobez" />
@@ -29,21 +29,23 @@ export default function Home({ songData, background }) {
       {/* Main */}
       <div>
         {/* Heading/Hero */}
-        <div className="px-10">
-          <Image
-            className="mx-auto w-full max-w-xl"
-            src="/images/cobez-logo.svg"
-            width={200}
-            height={100}
-            alt="Cobez logo"
-          />
-          <h4 className="font-bellotaHeading font-bold text-3xl text-center text-white mt-2">
-            songwriter | producer
-          </h4>
-        </div>
+        <section className="bg-black/50 pt-8 pb-20 md:pb-24 lg:pb-24">
+          <div className="px-10">
+            <Image
+              className="mx-auto w-full max-w-xl"
+              src="/images/cobez-logo.svg"
+              width={200}
+              height={100}
+              alt="Cobez logo"
+            />
+            <h4 className="font-bellotaHeading font-bold text-3xl text-center text-white mt-2">
+              songwriter | producer
+            </h4>
+          </div>
+        </section>
         {/* Featured Music Section */}
-        <section className="bg-gray-100/95">
-          <div className="mt-20 md:mt-24 lg:mt-24 w-11/12 mx-auto pt-8 pb-12 md:pt-16 md:pb-20">
+        <section className="bg-gray-100/95 border-y border-white">
+          <div className="w-11/12 mx-auto pt-8 pb-12 md:pt-16 md:pb-20">
             {/* Header */}
             <div className="h-16 mx-auto max-w-3xl flex items-center justify-center md:justify-start md:pl-4 border-l-4 border-theme-primary border-b-4 rounded-bl-md mb-4 md:mb-12">
               <h1 className="text-theme-primary text-3xl md:text-3xl text-center md:text-left font-bellotaHeading font-bold">
@@ -88,8 +90,8 @@ export default function Home({ songData, background }) {
           </div>
         </section>
         {/* About Section */}
-        <section className="bg-theme-primary/95">
-          <div className="mt-20 md:mt-24 lg:mt-24 w-11/12 mx-auto pt-8 pb-12 md:pt-16 md:pb-20">
+        <section className="bg-theme-primary/95 border-y border-white mt-20 md:mt-24 lg:mt-24">
+          <div className="w-11/12 mx-auto pt-8 pb-12 md:pt-16 md:pb-20">
             {/* Header */}
             <div className="h-16 mx-auto max-w-3xl flex items-center justify-center md:justify-start md:pl-4 border-l-4 border-white border-b-4 rounded-bl-md mb-4 md:mb-12">
               <h1 className="text-white text-3xl md:text-3xl text-center md:text-left font-bellotaHeading font-bold">
@@ -127,8 +129,8 @@ export default function Home({ songData, background }) {
           </div>
         </section>
         {/* Contact Section */}
-        <section className="bg-theme-tertiary/95">
-          <div className="mt-20 md:mt-24 lg:mt-24 w-11/12 mx-auto pt-8 pb-12 md:pt-16 md:pb-20">
+        <section className="bg-theme-tertiary/95 border-t border-white mt-20 md:mt-24 lg:mt-24">
+          <div className="w-11/12 mx-auto pt-8 pb-12 md:pt-16 md:pb-20">
             {/* Header */}
             <div className="h-16 mx-auto max-w-3xl flex items-center justify-center md:justify-start md:pl-4 border-l-4 border-white border-b-4 rounded-bl-md mb-4 md:mb-12">
               <h1 className="text-white text-3xl md:text-3xl text-center md:text-left font-bellotaHeading font-bold">
