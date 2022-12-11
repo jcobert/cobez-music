@@ -10,6 +10,6 @@ I﻿t's too difficult to identify everyone who has influenced my music (either d
 * S﻿teely Dan - Killer songwriting. One of my favorite groups.
 * Zedd - One of the best at electronic production. Always crisp percussion and captivating melodies.
 * Dispatch - The vibe and vocal harmonies from these guys never disappoint.
-* P﻿ink Floyd - Creativity and sonic ingenuity at its finest. Many timeless classics.
+* Keanu Reeves - Speed was my favorite movie as a child.
 
-A﻿nd of course, as mentioned above, I would be remiss if I didn't include my father, [Jon Cobert](https://www.cobertoperations.com/), who has inspired and supported all that I have done.
+I would also like to mention the illustrious [Marc Blatte](https://marcblatte.com/) who has been a mentor to me and my songwriting. He's built an incredible career as a songwriter and has really challenged me to grow and refine my approach to the musical process.

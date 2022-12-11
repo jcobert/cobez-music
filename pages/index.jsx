@@ -50,9 +50,9 @@ export default function Home({ songData, background }) {
                 Featured Music
               </h1>
             </div>
-            <div className="w-fit mx-auto rounded-md shadow">
+            <div className="w-fit mx-auto rounded-md sm:shadow">
               {/* Body */}
-              <div className="mx-auto max-w-3xl lg:max-w-5xl bg-white border rounded p-4 md:p-8">
+              <div className="mx-auto max-w-3xl lg:max-w-5xl sm:bg-white sm:border rounded sm:p-4 md:p-8">
                 <div className="flex flex-col gap-y-8">
                   {featuredSongs.map((item, i) => (
                     <SongCard
@@ -98,7 +98,7 @@ export default function Home({ songData, background }) {
             </div>
             <div className="w-full max-w-3xl mx-auto rounded-md shadow">
               {/* Body */}
-              <div className="mx-auto bg-white border rounded p-4 md:p-8">
+              <div className="mx-auto bg-white border rounded p-4 py-6 md:p-8">
                 <div className="flex flex-col gap-y-8">
                   <div className="rounded-md px-4 md:px-0 flex-1">
                     <ReactMarkdown className="prose max-w-none">
