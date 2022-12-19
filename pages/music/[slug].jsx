@@ -109,8 +109,19 @@ function Music({ frontmatter, markdown }) {
         </div>
       </div>
       {/* Description */}
-      <div className="md:w-10/12 xl:w-8/12 max-w-5xl p-4 mx-auto md:mt-4 lg:mt-12">
-        <ReactMarkdown className="prose max-w-none">{body}</ReactMarkdown>
+      <div className={!body ? "hidden" : ""}>
+        <div className="md:w-10/12 xl:w-8/12 max-w-5xl p-4 mx-auto md:mt-4 lg:mt-12">
+          <ReactMarkdown className="prose max-w-none">{body}</ReactMarkdown>
+        </div>
+      </div>
+      {/* Lyrics */}
+      <div className={!song.lyrics ? "hidden" : ""}>
+        <div className="md:w-10/12 xl:w-8/12 max-w-5xl p-4 mx-auto text-center mt-8 md:mt-10 lg:mt-16">
+          <h3 className="text-3xl font-bellotaHeading text-theme-tertiary pb-8">Lyrics</h3>
+          <ReactMarkdown className="prose max-w-none">
+            {song.lyrics}
+          </ReactMarkdown>
+        </div>
       </div>
     </div>
   );
