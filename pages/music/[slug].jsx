@@ -122,7 +122,7 @@ function Music({ frontmatter, markdown }) {
       <Disclosure>
         {({ open }) => (
           <div className={!song.lyrics ? "hidden" : ""}>
-            <div className="md:w-10/12 xl:w-8/12 max-w-5xl p-4 mx-auto text-center mt-12 md:mt-24">
+            <div className="md:w-10/12 xl:w-8/12 max-w-5xl p-4 mx-auto text-center mt-10 md:mt-16">
               <Disclosure.Button
                 className={`mx-auto rounded-t p-4 md:p-3 max-w-2xl bg-theme-primary hover:bg-theme-tertiary text-white hover:text-white border text-lg md:text-base flex gap-x-2 justify-center items-center transition-all ${
                   open ? "w-full" : "rounded w-full md:w-72"
