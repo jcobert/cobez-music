@@ -74,22 +74,22 @@ function Music({ frontmatter, markdown }) {
             <h6 className="text-sm text-theme-tertiary">{song.date}</h6>
           </div>
           {/* Stream Links */}
-          <div className="flex justify-around md:justify-center md:gap-x-16 text-4xl md:text-3xl text-theme-tertiary mt-4 p-2">
+          <div className="flex justify-around md:justify-center md:gap-x-16 text-4xl md:text-3xl text-theme-primary mt-4 p-2">
             <a href={song.links.spotify}>
               <FontAwesomeIcon
-                className="hover:text-theme-primary transition"
+                className="hover:text-theme-tertiary transition"
                 icon={faSpotify}
               />
             </a>
             <a href={song.links.apple}>
               <FontAwesomeIcon
-                className="hover:text-theme-primary transition"
+                className="hover:text-theme-tertiary transition"
                 icon={faApple}
               />
             </a>
             <a href={song.links.youtube}>
               <FontAwesomeIcon
-                className="hover:text-theme-primary transition"
+                className="hover:text-theme-tertiary transition"
                 icon={faYoutube}
               />
             </a>
