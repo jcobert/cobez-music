@@ -7,8 +7,12 @@ import {
   faApple,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
-import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
+import {
+  faAngleLeft,
+  faAngleDown,
+} from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
+import { Disclosure } from "@headlessui/react";
 
 export async function getStaticPaths() {
   const paths = getAllSongIds();
@@ -69,22 +73,22 @@ function Music({ frontmatter, markdown }) {
             <h6 className="text-sm text-theme-tertiary">{song.date}</h6>
           </div>
           {/* Stream Links */}
-          <div className="flex justify-around md:justify-center md:gap-x-16 text-4xl md:text-3xl text-theme-tertiary mt-4 p-2">
+          <div className="flex justify-around md:justify-center md:gap-x-16 text-4xl md:text-3xl text-theme-primary mt-4 p-2">
             <a href={song.links.spotify}>
               <FontAwesomeIcon
-                className="hover:text-theme-primary transition"
+                className="hover:text-theme-tertiary transition"
                 icon={faSpotify}
               />
             </a>
             <a href={song.links.apple}>
               <FontAwesomeIcon
-                className="hover:text-theme-primary transition"
+                className="hover:text-theme-tertiary transition"
                 icon={faApple}
               />
             </a>
             <a href={song.links.youtube}>
               <FontAwesomeIcon
-                className="hover:text-theme-primary transition"
+                className="hover:text-theme-tertiary transition"
                 icon={faYoutube}
               />
             </a>
@@ -109,9 +113,46 @@ function Music({ frontmatter, markdown }) {
         </div>
       </div>
       {/* Description */}
-      <div className="md:w-10/12 xl:w-8/12 max-w-5xl p-4 mx-auto md:mt-4 lg:mt-12">
-        <ReactMarkdown className="prose max-w-none">{body}</ReactMarkdown>
+      <div className={!body ? "hidden" : ""}>
+        <div className="md:w-10/12 xl:w-8/12 max-w-5xl p-4 mx-auto md:mt-4 lg:mt-12">
+          <ReactMarkdown className="prose max-w-none">{body}</ReactMarkdown>
+        </div>
       </div>
+      {/* Lyrics */}
+      <Disclosure>
+        {({ open }) => (
+          <div className={!song.lyrics ? "hidden" : ""}>
+            <div className="md:w-10/12 xl:w-8/12 max-w-5xl p-4 mx-auto text-center mt-12 md:mt-24">
+              <Disclosure.Button
+                className={`mx-auto rounded-t p-4 md:p-3 max-w-2xl bg-theme-primary hover:bg-theme-tertiary text-white hover:text-white border text-lg md:text-base flex gap-x-2 justify-center items-center transition-all ${
+                  open ? "w-full" : "rounded w-full md:w-72"
+                }`}
+              >
+                <div className="flex items-center justify-center w-full text-lg gap-x-2 px-2">
+                  <span className="">Lyrics</span>
+                  <span className={`${!open ? "" : ""}`}>
+                    <FontAwesomeIcon
+                      className={
+                        !open
+                          ? "rotate-180 transform transition-transform"
+                          : "transform transition-transform"
+                      }
+                      icon={open ? faAngleDown : faAngleDown}
+                    ></FontAwesomeIcon>
+                  </span>
+                </div>
+              </Disclosure.Button>
+              <Disclosure.Panel
+                className={`bg-white rounded-b border border-t-0 p-8 max-w-2xl mx-auto`}
+              >
+                <ReactMarkdown className="prose max-w-none">
+                  {song.lyrics}
+                </ReactMarkdown>
+              </Disclosure.Panel>
+            </div>
+          </div>
+        )}
+      </Disclosure>
     </div>
   );
 }

@@ -42,21 +42,21 @@ function SongCard(props) {
             </div>
             <div className="flex flex-col md:flex-row w-full justify-center items-center gap-y-4 lg:hidden">
               {/* Stream Links */}
-              <div className="flex w-full md:w-9/12 items-center justify-around md:justify-center md:gap-x-8 text-5xl md:text-3xl text-theme-tertiary p-2 md:p-1 flex-1">
+              <div className="flex w-full md:w-9/12 items-center justify-around md:justify-center md:gap-x-8 text-5xl md:text-3xl text-theme-primary p-2 md:p-1 flex-1">
                 <a
-                  className="hover:text-theme-primary transition"
+                  className="hover:text-theme-tertiary transition"
                   href={song.data.links.spotify}
                 >
                   <FontAwesomeIcon icon={faSpotify} />
                 </a>
                 <a
-                  className="hover:text-theme-primary transition"
+                  className="hover:text-theme-tertiary transition"
                   href={song.data.links.apple}
                 >
                   <FontAwesomeIcon icon={faApple} />
                 </a>
                 <a
-                  className="hover:text-theme-primary transition"
+                  className="hover:text-theme-tertiary transition"
                   href={song.data.links.youtube}
                 >
                   <FontAwesomeIcon icon={faYoutube} />
@@ -76,21 +76,21 @@ function SongCard(props) {
           {/* --- Large Breakpoint Only --- */}
           <div className="hidden lg:flex gap-x-4">
             {/* Stream Links - lg */}
-            <div className="flex w-full md:w-9/12 items-center justify-around md:justify-center md:gap-x-8 text-5xl md:text-3xl text-theme-tertiary p-2 md:p-1 flex-1">
+            <div className="flex w-full md:w-9/12 items-center justify-around md:justify-center md:gap-x-8 text-5xl md:text-3xl text-theme-primary p-2 md:p-1 flex-1">
               <a
-                className="hover:text-theme-primary transition"
+                className="hover:text-theme-tertiary transition"
                 href={song.data.links.spotify}
               >
                 <FontAwesomeIcon icon={faSpotify} />
               </a>
               <a
-                className="hover:text-theme-primary transition"
+                className="hover:text-theme-tertiary transition"
                 href={song.data.links.apple}
               >
                 <FontAwesomeIcon icon={faApple} />
               </a>
               <a
-                className="hover:text-theme-primary transition"
+                className="hover:text-theme-tertiary transition"
                 href={song.data.links.youtube}
               >
                 <FontAwesomeIcon icon={faYoutube} />
