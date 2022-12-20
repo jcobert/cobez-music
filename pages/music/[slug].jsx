@@ -7,8 +7,13 @@ import {
   faApple,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
-import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
+import {
+  faAngleLeft,
+  faAngleUp,
+  faAngleDown,
+} from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
+import { Disclosure, Transition } from "@headlessui/react";
 
 export async function getStaticPaths() {
   const paths = getAllSongIds();
@@ -115,14 +120,40 @@ function Music({ frontmatter, markdown }) {
         </div>
       </div>
       {/* Lyrics */}
-      <div className={!song.lyrics ? "hidden" : ""}>
-        <div className="md:w-10/12 xl:w-8/12 max-w-5xl p-4 mx-auto text-center mt-8 md:mt-10 lg:mt-16">
-          <h3 className="text-3xl font-bellotaHeading text-theme-tertiary pb-8">Lyrics</h3>
-          <ReactMarkdown className="prose max-w-none">
-            {song.lyrics}
-          </ReactMarkdown>
-        </div>
-      </div>
+      <Disclosure>
+        {({ open }) => (
+          <div className={!song.lyrics ? "hidden" : ""}>
+            <div className="md:w-10/12 xl:w-8/12 max-w-5xl p-4 mx-auto text-center mt-12 md:mt-16">
+              <Disclosure.Button
+                className={`mx-auto rounded-t p-4 md:p-3 max-w-2xl bg-theme-primary hover:bg-theme-tertiary text-white text-theme-primary hover:text-white border text-lg md:text-base flex gap-x-2 justify-center items-center transition-all ${
+                  open ? "w-full" : "rounded w-full md:w-72"
+                }`}
+              >
+                <div className="flex items-center justify-center w-full text-lg gap-x-2 px-2">
+                  <span className="">Lyrics</span>
+                  <span className={`${!open ? "" : ""}`}>
+                    <FontAwesomeIcon
+                      className={
+                        !open
+                          ? "rotate-180 transform transition-transform"
+                          : "transform transition-transform"
+                      }
+                      icon={open ? faAngleDown : faAngleDown}
+                    ></FontAwesomeIcon>
+                  </span>
+                </div>
+              </Disclosure.Button>
+              <Disclosure.Panel
+                className={`bg-white rounded-b border border-t-0 p-8 max-w-2xl mx-auto`}
+              >
+                <ReactMarkdown className="prose max-w-none">
+                  {song.lyrics}
+                </ReactMarkdown>
+              </Disclosure.Panel>
+            </div>
+          </div>
+        )}
+      </Disclosure>
     </div>
   );
 }
