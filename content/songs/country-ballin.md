@@ -190,6 +190,6 @@ credits:
   - Producer
   - Vocals
 ---
-My good friend Vinnie suggested one day that I should create a country rap beat. I said, "sure, why not?" After layering some 808s with a little acoustic guitar and hammond organ, I figured I might as well write some lyrics and lay down a vocal part on top of it.
+My good friend Vinnie suggested one day that I should create a country rap beat. I said, "sure, why not?" After layering some 808s with a little acoustic guitar and Hammond organ, I figured I might as well write some lyrics and lay down a vocal part on top of it.
 
 I﻿ wove together several stereotypes and tropes from both country and rap genres to form the slightly obnoxious and unabashedly generic lyrics you hear today. I had fun making this song and hope that people don't take it too seriously and enjoy listening.
