@@ -9,11 +9,10 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import {
   faAngleLeft,
-  faAngleUp,
   faAngleDown,
 } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
-import { Disclosure, Transition } from "@headlessui/react";
+import { Disclosure } from "@headlessui/react";
 
 export async function getStaticPaths() {
   const paths = getAllSongIds();
