@@ -138,21 +138,21 @@ function SongCard(props) {
           </div>
           <div className="flex flex-col w-full justify-center items-center gap-y-4 flex-1">
             {/* Stream Links */}
-            <div className="flex w-full md:w-9/12 items-center justify-around text-5xl md:text-4xl text-theme-tertiary p-2 flex-1">
+            <div className="flex w-full md:w-9/12 items-center justify-around text-5xl md:text-4xl text-theme-primary p-2 flex-1">
               <a
-                className="hover:text-theme-primary transition"
+                className="hover:text-theme-tertiary transition"
                 href={song.data.links.spotify}
               >
                 <FontAwesomeIcon icon={faSpotify} />
               </a>
               <a
-                className="hover:text-theme-primary transition"
+                className="hover:text-theme-tertiary transition"
                 href={song.data.links.apple}
               >
                 <FontAwesomeIcon icon={faApple} />
               </a>
               <a
-                className="hover:text-theme-primary transition"
+                className="hover:text-theme-tertiary transition"
                 href={song.data.links.youtube}
               >
                 <FontAwesomeIcon icon={faYoutube} />
