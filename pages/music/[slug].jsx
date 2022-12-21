@@ -145,8 +145,8 @@ function Music({ frontmatter, markdown }) {
               <Disclosure.Panel
                 className={`bg-white rounded-b border border-t-0 p-8 max-w-2xl mx-auto`}
               >
-                <ReactMarkdown className="prose max-w-none">
-                  {song.lyrics}
+                <ReactMarkdown className="prose leading-3 max-w-none">
+                  {song.lyrics?.replace(/\n/gi, "&nbsp; \n \n")}
                 </ReactMarkdown>
               </Disclosure.Panel>
             </div>
