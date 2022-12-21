@@ -124,8 +124,8 @@ function Music({ frontmatter, markdown }) {
           <div className={!song.lyrics ? "hidden" : ""}>
             <div className="md:w-10/12 xl:w-8/12 max-w-5xl p-4 mx-auto text-center mt-10 md:mt-16">
               <Disclosure.Button
-                className={`mx-auto rounded-t p-4 md:p-3 max-w-2xl bg-theme-primary hover:bg-theme-tertiary text-white hover:text-white border text-lg md:text-base flex gap-x-2 justify-center items-center transition-all ${
-                  open ? "w-full" : "rounded w-full md:w-72"
+                className={`mx-auto rounded-t-md p-4 md:p-3 max-w-2xl bg-theme-primary hover:bg-theme-tertiary text-white hover:text-white border text-lg md:text-base flex gap-x-2 justify-center items-center transition-all ${
+                  open ? "w-full" : "rounded-md w-full md:w-72"
                 }`}
               >
                 <div className="flex items-center justify-center w-full text-lg gap-x-2 px-2">
@@ -143,7 +143,7 @@ function Music({ frontmatter, markdown }) {
                 </div>
               </Disclosure.Button>
               <Disclosure.Panel
-                className={`bg-white rounded-b border border-t-0 p-8 max-w-2xl mx-auto`}
+                className={`bg-white rounded-b-md border border-t-0 p-8 max-w-2xl mx-auto`}
               >
                 <ReactMarkdown className="prose leading-3 max-w-none">
                   {song.lyrics?.replace(/\n/gi, "&nbsp; \n \n")}
