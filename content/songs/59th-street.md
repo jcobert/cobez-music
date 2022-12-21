@@ -7,40 +7,40 @@ genre: Rock
 artwork: /images/cms/59th-street-artwork.jpeg
 description: A smooth groove from Thought Police.
 lyrics: |-
-  We had it so good <br />
-  Always finding ways to be misunderstood <br />
-  The adolescent guns just go undone <br />
-  Ready to explode one by one <br />
+  We had it so good
+  Always finding ways to be misunderstood 
+  The adolescent guns just go undone
+  Ready to explode one by one
 
-  Biking on the 59th street bridge against the wind <br />
-  The clearing is calling, I’m ready to begin <br />
-  Feel like a mason jar just twisted wrong <br />
-  I’ve been holding on for way too long <br />
+  Biking on the 59th street bridge against the wind
+  The clearing is calling, I’m ready to begin
+  Feel like a mason jar just twisted wrong
+  I’ve been holding on for way too long
 
-  Waves always calmed me down <br />
-  Except when they’re flowing all around town <br />
-  Take my hand you’ll be my second son <br />
-  We’ll stay together on the run <br />
+  Waves always calmed me down
+  Except when they’re flowing all around town
+  Take my hand you’ll be my second son
+  We’ll stay together on the run
 
-  Biking on the 59th street bridge against the wind <br />
-  The clearing is calling, I’m ready to begin <br />
-  Feel like a mason jar just twisted wrong <br />
-  I’ve been holding on for way too long <br />
+  Biking on the 59th street bridge against the wind
+  The clearing is calling, I’m ready to begin
+  Feel like a mason jar just twisted wrong
+  I’ve been holding on for way too long
 
-  Silence was so loud <br />
-  Something to fall back on, never was allowed <br />
-  Second line saved me from the abyss <br />
-  I brought my sticks with me ever since <br />
+  Silence was so loud 
+  Something to fall back on, never was allowed
+  Second line saved me from the abyss
+  I brought my sticks with me ever since
 
-  Biking on the 59th street bridge against the wind <br />
-  The clearing is calling, I’m ready to begin <br />
-  Feel like a mason jar just twisted wrong <br />
-  I’ve been holding on for way too long <br />
+  Biking on the 59th street bridge against the wind
+  The clearing is calling, I’m ready to begin
+  Feel like a mason jar just twisted wrong
+  I’ve been holding on for way too long
 
-  Biking on the 59th street bridge against the wind <br />
-  The clearing is calling, I’m ready to begin <br />
-  Feel like a mason jar just twisted wrong <br />
-  I’ve been holding on for way too long <br />
+  Biking on the 59th street bridge against the wind
+  The clearing is calling, I’m ready to begin
+  Feel like a mason jar just twisted wrong
+  I’ve been holding on for way too long
 links:
   apple: https://music.apple.com/us/album/59th-street/1503524643?i=1503524645
   spotify: https://open.spotify.com/track/3KLzalIlZzq99EtcQuOg8q?si=a869c6661d494bfa
