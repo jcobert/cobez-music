@@ -89,4 +89,4 @@ credits:
 ---
 The Eye Test is a sports podcast, hosted by my good friend Brian Donovan. I currently produce the show - editing the episodes and prepping them for release. This song is the extended version of the intro theme music that I created for the show.
 
-C﻿heck out the podcast [here](eyetestpodcast.com).
+C﻿heck out the podcast [here](https://eyetestpodcast.com).
