@@ -3,17 +3,13 @@ import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faSpotify,
-  faApple,
-  faYoutube,
-} from "@fortawesome/free-brands-svg-icons";
-import {
   faAngleLeft,
   faAngleDown,
   faMusic,
 } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import { Disclosure } from "@headlessui/react";
+import { determineLinkIcon } from "../../lib/utils";
 
 export async function getStaticPaths() {
   const paths = getAllSongIds();
@@ -39,24 +35,6 @@ function Music({ frontmatter, markdown }) {
 
   const hasLinks = !!song?.links;
   const streamLinks = hasLinks ? Object.keys(song?.links) : [];
-  /** @todo move to utilities */
-  const determineLinkIcon = (link) => {
-    let icon;
-    switch (link) {
-      case "spotify":
-        icon = faSpotify;
-        break;
-      case "apple":
-        icon = faApple;
-        break;
-      case "youtube":
-        icon = faYoutube;
-        break;
-      default:
-        break;
-    }
-    return icon;
-  };
 
   return (
     <div className="bg-white/95 pt-4 md:pt-12 pb-12 md:pb-8 min-h-screen">
@@ -87,7 +65,7 @@ function Music({ frontmatter, markdown }) {
               style={{ borderRadius: 5 }}
             />
           ) : (
-            <div className="flex flex-col items-center gap-y-4 rounded border p-16 bg-white/50 text-theme-primary">
+            <div className="flex flex-col items-center justify-center gap-y-4 rounded border p-16 bg-white/50 text-theme-primary">
               <div className="w-fit">
                 <FontAwesomeIcon className="text-7xl" icon={faMusic} />
               </div>
