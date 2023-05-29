@@ -10,6 +10,7 @@ import {
 import Link from "next/link";
 import { Disclosure } from "@headlessui/react";
 import { determineLinkIcon } from "../../lib/utils";
+import UploadcareImage from "@uploadcare/nextjs-loader";
 
 export async function getStaticPaths() {
   const paths = getAllSongIds();
@@ -56,7 +57,7 @@ function Music({ frontmatter, markdown }) {
         {/* Album artwork */}
         <div className="w-8/12 sm:w-6/12 md:w-4/12 max-w-xs p-4 flex-1">
           {song?.artwork ? (
-            <Image
+            <UploadcareImage
               src={song?.artwork}
               width={500}
               height={500}
