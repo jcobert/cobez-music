@@ -59,8 +59,8 @@ function SongCard(props) {
             <div className="flex flex-col md:flex-row w-full justify-center items-center gap-y-4 lg:hidden">
               {/* Stream Links */}
               <div className="flex w-full md:w-9/12 items-center justify-around md:justify-center md:gap-x-8 text-5xl md:text-3xl text-theme-primary p-2 md:p-1 flex-1">
-                {streamLinks?.map((link) => (
-                  <a href={song?.data?.links?.[link]}>
+                {streamLinks?.map((link, i) => (
+                  <a key={i} href={song?.data?.links?.[link]}>
                     <FontAwesomeIcon
                       className="hover:text-theme-tertiary transition"
                       icon={determineLinkIcon(link)}
@@ -83,8 +83,8 @@ function SongCard(props) {
           <div className="hidden lg:flex gap-x-4">
             {/* Stream Links - lg */}
             <div className="flex w-full md:w-9/12 items-center justify-around md:justify-center md:gap-x-8 text-5xl md:text-3xl text-theme-primary p-2 md:p-1 flex-1">
-              {streamLinks?.map((link) => (
-                <a href={song?.data?.links?.[link]}>
+              {streamLinks?.map((link, i) => (
+                <a key={i} href={song?.data?.links?.[link]}>
                   <FontAwesomeIcon
                     className="hover:text-theme-tertiary transition"
                     icon={determineLinkIcon(link)}
@@ -151,8 +151,8 @@ function SongCard(props) {
           <div className="flex flex-col w-full justify-center items-center gap-y-4 flex-1">
             {/* Stream Links */}
             <div className="flex w-full md:w-9/12 items-center justify-around text-5xl md:text-4xl text-theme-primary p-2 flex-1">
-              {streamLinks?.map((link) => (
-                <a href={song?.data?.links?.[link]}>
+              {streamLinks?.map((link, i) => (
+                <a key={i} href={song?.data?.links?.[link]}>
                   <FontAwesomeIcon
                     className="hover:text-theme-tertiary transition"
                     icon={determineLinkIcon(link)}

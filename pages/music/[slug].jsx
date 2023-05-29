@@ -84,8 +84,8 @@ function Music({ frontmatter, markdown }) {
           </div>
           {/* Stream Links */}
           <div className="flex justify-around md:justify-center md:gap-x-16 text-4xl md:text-3xl text-theme-primary mt-4 p-2">
-            {streamLinks?.map((link) => (
-              <a href={song?.links?.[link]}>
+            {streamLinks?.map((link, i) => (
+              <a key={i} href={song?.links?.[link]}>
                 <FontAwesomeIcon
                   className="hover:text-theme-tertiary transition"
                   icon={determineLinkIcon(link)}
