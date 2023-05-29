@@ -8,7 +8,6 @@ import artistPhotoPark from "../public/images/artist-photo-cobez-park-2.jpg";
 import artistPhotoLift from "../public/images/artist-photo-cobez-lift.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import UploadcareImage from "@uploadcare/nextjs-loader";
 
 export async function getStaticProps({ params }) {
   const background = getAboutData("background");
@@ -40,7 +39,7 @@ export default function About({ background, influences }) {
             <div className="flex flex-col md:inline gap-y-4">
               {/* Artist Photo */}
               <div className="w-7/12 max-w-[16rem] mx-auto md:float-left md:mr-4 outline outline-2 outline-theme-secondary rounded-[5px]">
-                <UploadcareImage
+                <Image
                   src={artistPhotoPark}
                   alt="Artist photo"
                   layout="responsive"
@@ -57,7 +56,7 @@ export default function About({ background, influences }) {
             <div className="flex flex-col md:inline gap-y-4">
               {/* Artist Photo */}
               <div className="w-7/12 max-w-[16rem] mx-auto md:float-right md:ml-4 outline outline-2 outline-theme-secondary rounded-[5px]">
-                <UploadcareImage
+                <Image
                   src={artistPhotoLift}
                   alt="Artist photo"
                   layout="responsive"
