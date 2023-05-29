@@ -4,13 +4,6 @@ backend:
 
 local_backend: true
 
-media_library:
-  name: uploadcare
-  config:
-    publicKey: fe63f833548e371aac78
-  settings:
-    autoFilename: true
-
 media_folder: "public/images/cms"
 public_folder: "/images/cms"
 collections:
@@ -22,8 +15,7 @@ collections:
     fields:
       - { label: "Layout", name: "layout", widget: "hidden", default: "music" }
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Artist", name: "artist", widget: "string", required: false }
-      - { label: "Published", name: "published", widget: "boolean", default: true, required: false }
+      - { label: "Artist", name: "artist", widget: "string" }
       - {
           label: "Release Date",
           name: "date",
@@ -31,27 +23,25 @@ collections:
           format: "MMM D, YYYY",
           date_format: "MM/D/YYYY",
           time_format: false,
-          required: false
         }
-      - { label: "Genre", name: "genre", widget: "string", required: false }
-      - { label: "Artwork", name: "artwork", widget: "image", required: false }
+      - { label: "Genre", name: "genre", widget: "string" }
+      - { label: "Artwork", name: "artwork", widget: "image" }
       - {
           label: "Featured on Homepage",
           name: "featured",
           widget: "boolean",
-          required: false
+          required: false,
         }
-      - { label: "Description", name: "description", widget: "string", required: false }
+      - { label: "Description", name: "description", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown", required: false }
       - { label: "Lyrics", name: "lyrics", widget: "markdown", required: false }
       - label: "Stream Links"
         name: "links"
         widget: "object"
-        required: false
         fields:
-          - { label: "Spotify", name: "spotify", widget: "string", required: false }
-          - { label: "Apple Music", name: "apple", widget: "string", required: false }
-          - { label: "Youtube", name: "youtube", widget: "string", required: false }
+          - { label: "Spotify", name: "spotify", widget: "string" }
+          - { label: "Apple Music", name: "apple", widget: "string" }
+          - { label: "Youtube", name: "youtube", widget: "string" }
       - {
           label: "Credits",
           name: "credits",
@@ -63,15 +53,8 @@ collections:
               name: "credit",
               widget: "select",
               options:
-                ["Songwriter", "Producer", "Recording Engineer", "Vocals", "Composer"],
+                ["Songwriter", "Producer", "Recording Engineer", "Vocals"],
             },
-          required: false
-        }
-      - { 
-          label: "Audio File",
-          name: "audio",
-          widget: "file",
-          required: false
         }
   - label: "About"
     name: "about"

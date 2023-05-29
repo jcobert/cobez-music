@@ -12,7 +12,7 @@ const navigation = [
 ];
 
 const activeLinkStyle =
-  "text-theme-primary font-bold border-b border-slate-300 rounded-b-none hover:rounded-md hover:bg-theme-secondary/10 hover:text-theme-primary hover:border-theme-secondary/10";
+  "text-theme-primary font-bold border-b border-slate-300 rounded-b-none hover:rounded-md hover:bg-white hover:text-theme-primary hover:border-white";
 
 const activeLinkStyleMobile =
   "text-slate-50 hover:text-slate-100 bg-slate-400 hover:bg-slate-500";
