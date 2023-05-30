@@ -4,7 +4,7 @@ title: Bring Me Down
 artist: Steph Taibi
 date: Jan 8, 2021
 genre: Pop
-artwork: /images/cms/bring-me-down-artwork.jpg
+artwork: https://ucarecdn.com/e51cee6b-7a70-45fb-89da-3fa87b75752a/bring-me-down-artwork.jpg
 featured: true
 description: A pop tune performed by the talented Steph Taibi. Written and
   produced by Cobez.
