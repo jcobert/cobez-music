@@ -4,7 +4,7 @@ title: Come Alive
 artist: Cobez
 date: Jun 28, 2019
 genre: Pop
-artwork: /images/cms/come-alive-artwork.jpg
+artwork: https://ucarecdn.com/355a2ff7-99f7-409b-95ee-b6c4d6e2a8bb/come-alive-artwork.jpg
 description: Orchestral percussion and guitar accompany this pop track.
 lyrics: |-
   Will you come away with me
