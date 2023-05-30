@@ -4,7 +4,7 @@ title: The Eye Test (Theme from The Eye Test Podcast)
 artist: Cobez
 date: Apr 10, 2022
 genre: Hip-hop/Rap
-artwork: /images/cms/theme-song-art.jpg
+artwork: https://ucarecdn.com/f3e05268-3d2c-4bac-8b32-08ee108b356b/the-eye-test-artwork.jpg
 featured: true
 description: This is the extended version of the intro theme music that I
   created for The Eye Test Podcast.
