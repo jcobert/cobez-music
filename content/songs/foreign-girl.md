@@ -4,7 +4,7 @@ title: "Foreign Girl "
 artist: Cobez
 date: May 10, 2019
 genre: Pop
-artwork: /images/cms/foreign-girl.jpg
+artwork: https://ucarecdn.com/ad5ca785-cb0d-42bb-9e22-b75abdb60a81/foreign-girl-artwork.jpg
 description: "A fun, pop track inspired by my foreign girl. "
 lyrics: |-
   When you’re laying alone at night
