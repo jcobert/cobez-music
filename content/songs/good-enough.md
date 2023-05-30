@@ -4,7 +4,7 @@ title: Good Enough
 artist: Cobez
 date: Sep 9, 2019
 genre: Pop
-artwork: /images/cms/good-enough-artwork.jpg
+artwork: https://ucarecdn.com/10a3c197-433a-452d-9ff2-8cb459a53f60/good-enough-artwork.jpg
 description: Here's a pop song about not settling for less than you deserve.
 lyrics: |-
   When I wake up in the morning
