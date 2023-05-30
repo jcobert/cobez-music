@@ -4,7 +4,7 @@ title: Meant to Be
 artist: Cobez
 date: Feb 22, 2019
 genre: Pop
-artwork: /images/cms/meant-to-be-artwork.jpg
+artwork: https://ucarecdn.com/6e1f28a8-0880-4d58-ba04-c859e4f29837/meant-to-be-artwork.jpg
 description: A basic love ballad.
 lyrics: |-
   You come to me
