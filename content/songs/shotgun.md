@@ -4,7 +4,7 @@ title: Shotgun
 artist: Bliss Ü, Cobez
 date: Jul 1, 2022
 genre: Dance
-artwork: /images/cms/shotgun-artwork.jpeg
+artwork: https://ucarecdn.com/92134463-4724-409c-a807-ac866dea1c4b/shotgun-artwork.jpeg
 featured: true
 description: A cover of the original George Ezra hit. Produced by South Africa's
   own Bliss Ü.
