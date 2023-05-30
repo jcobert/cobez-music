@@ -4,7 +4,7 @@ title: Back to You
 artist: Cobez
 date: Dec 20, 2018
 genre: Pop
-artwork: /images/cms/back-to-you-artwork.jpg
+artwork: https://ucarecdn.com/aed1bf39-47ca-408a-8be6-f5509895aa68/back-to-you-artwork.jpg
 description: My first official single release.
 lyrics: |-
   Between where I end and where you begin
