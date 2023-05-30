@@ -4,7 +4,7 @@ title: Hold On
 artist: Cobez
 date: Sep 25, 2020
 genre: Pop
-artwork: /images/cms/hold-on-artwork.jpg
+artwork: https://ucarecdn.com/85f9fec5-358e-4ff1-b97a-87ac93df06b5/hold-on-artwork.jpg
 description: This one's about enduring through those tough times.
 lyrics: |-
   You keep on longing for the good times
