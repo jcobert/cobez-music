@@ -4,7 +4,7 @@ title: 59th Street
 artist: Thought Police
 date: Mar 19, 2020
 genre: Rock
-artwork: /images/cms/59th-street-artwork.jpeg
+artwork: https://ucarecdn.com/4bbac466-bb24-4418-97a4-ca2f17466b2d/59th-street-artwork.jpeg
 description: A smooth groove from Thought Police.
 lyrics: |-
   We had it so good
