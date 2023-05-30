@@ -2,13 +2,13 @@ import Head from "next/head";
 import Script from "next/script";
 import SongCard from "../components/SongCard";
 import { getAllSongData } from "../lib/songs";
-import Image from "next/future/image";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import ContactForm from "../components/ContactForm";
 import { getAboutData } from "../lib/about";
 import ReactMarkdown from "react-markdown";
+import Logo from "../components/Logo";
 
 export default function Home({ songData, background }) {
   const featuredSongs = [songData].flatMap((songs) => {
@@ -31,13 +31,7 @@ export default function Home({ songData, background }) {
         {/* Heading/Hero */}
         <section className="bg-black/50 pt-8 pb-20 md:pb-24 lg:pb-24">
           <div className="px-10">
-            <Image
-              className="mx-auto w-full max-w-xl"
-              src="/images/cobez-logo.svg"
-              width={200}
-              height={100}
-              alt="Cobez logo"
-            />
+            <Logo className="mx-auto w-full max-w-xl" />
             <h4 className="font-bellotaHeading font-bold text-3xl text-center text-white mt-2">
               songwriter | producer
             </h4>
