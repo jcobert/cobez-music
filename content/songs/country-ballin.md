@@ -4,7 +4,7 @@ title: Country Ballin'
 artist: Cobez
 date: May 15, 2020
 genre: Country
-artwork: /images/cms/country-ballin-artwork.jpg
+artwork: https://ucarecdn.com/75815b17-f359-41c7-a74c-6ece53c9c208/country-ballin-artwork.jpg
 description: Started as a joke and ended up being a hit. This country, hip-hop
   fusion is sure to rock your backyard BBQ.
 lyrics: |-
